@@ -105,6 +105,7 @@ address{font-style:normal;font-size:1.1rem;margin-bottom:1.5rem}
 .social-link{display:inline-flex;align-items:center;gap:.7rem;padding:.9rem 1.5rem;border-radius:999px;background:#fff;text-decoration:none;font-weight:600;box-shadow:0 8px 24px rgba(42,15,69,.1);transition:transform .2s,background .2s,color .2s}
 .social-link svg{width:22px;height:22px;fill:currentColor}
 .social-link:hover{transform:translateY(-3px);color:#fff}
+.g-link:hover{background:#4285f4}
 .fb:hover{background:#1877f2}.yt:hover{background:#e00}.map-link:hover{background:var(--purple-700)}
 
 .footer{background:var(--purple-950);color:#cfc3dc;padding:2.5rem 0;font-size:.85rem}
