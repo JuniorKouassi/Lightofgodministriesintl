@@ -1,0 +1,48 @@
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow">{{homeVisitEyebrow}}</p>
+        <h1>{{visitH1}}</h1>
+        <p class="page-lead">{{visitLead}}</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap visit-grid">
+        <div>
+          <h2 class="h3">{{addrLabel}}</h2>
+          <address>
+            <strong>The Light of God Ministries</strong><br>
+            Bräunlichgasse 24a<br>
+            2700 Wiener Neustadt, {{country}}
+          </address>
+          <h2 class="h3">{{phoneLabel}}</h2>
+          <p class="big-phone"><a href="tel:+436769465931">+43 676 9465931</a></p>
+          <div class="cta">
+            <a class="btn btn-indigo" href="tel:+436769465931">{{callUs}}</a>
+            <a class="btn btn-whatsapp" href="{{whatsappUrl}}" target="_blank" rel="noopener">{{whatsapp}}</a>
+          </div>
+          <h2 class="h3">{{timesLabel}}</h2>
+          <ul class="times">
+            <li><span>{{daySun}}</span> {{svcService}} · 10:00 – 12:30</li>
+            <li><span>{{dayWed}}</span> {{svcPrayer}} · 17:00 – 18:30</li>
+            <li><span>{{dayMon}}</span> {{svcBible}} · 17:30 – 19:00</li>
+          </ul>
+        </div>
+        <div>
+          <div class="map" id="map" data-src="https://www.google.com/maps?q=47.8055659,16.2324733&amp;z=17&amp;hl={{lang}}&amp;output=embed" data-title="{{mapTitle}}">
+            <div class="map-consent">
+              <p>{{mapConsent}}</p>
+              <button type="button" class="btn btn-indigo" id="loadMap">{{mapLoad}}</button>
+              <a class="link" href="{{mapsPlace}}" target="_blank" rel="noopener">{{openMaps}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section follow">
+      <div class="wrap center">
+        <h2>{{footFollow}}</h2>
+        <div class="social">{{socialPills}}</div>
+      </div>
+    </section>

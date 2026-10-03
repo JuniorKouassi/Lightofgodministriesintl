@@ -1,0 +1,74 @@
+    <section class="hero">
+      <div class="rays" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">{{heroEyebrow}}</p>
+          <h1>{{heroTitle}}</h1>
+          <p class="lead">“{{verse}}” <span>{{verseRef}}</span></p>
+          <p class="hero-sub">{{heroSub}}</p>
+          <div class="cta">
+            <a class="btn btn-gold" href="#services">{{ctaJoin}}</a>
+            <a class="btn btn-ghost" href="{{mapsPlace}}" target="_blank" rel="noopener">{{ctaDirections}}</a>
+          </div>
+          <p class="next" id="nextService" aria-live="polite"></p>
+        </div>
+        <figure class="hero-art">
+          <img src="{{root}}assets/welcome-poster.jpg" alt="{{posterAlt}}" width="1920" height="1066">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="wrap">
+        <p class="eyebrow dark">{{homeServicesEyebrow}}</p>
+        <h2>{{homeServicesTitle}}</h2>
+        {{serviceCards}}
+        <p class="more"><a class="link" href="{{hGatherings}}">{{homeMore}}</a></p>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="wrap about-grid">
+        <div class="logo-wrap"><img src="{{root}}assets/logo.jpg" alt="{{aboutLogoAlt}}" width="360" height="360" loading="lazy"></div>
+        <div>
+          <p class="eyebrow">{{homeAboutEyebrow}}</p>
+          <h2>{{homeAboutTitle}}</h2>
+          <p>{{homeAboutText}}</p>
+          <blockquote>“{{verseFull}}” <cite>{{verseRef}}</cite></blockquote>
+          <p><a class="link gold" href="{{hAbout}}">{{homeAboutLink}}</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section watch" id="watch">
+      <div class="wrap">
+        <p class="eyebrow">{{homePreachEyebrow}}</p>
+        <h2>{{homePreachTitle}}</h2>
+        <p class="watch-text">{{homePreachText}}</p>
+        <a class="btn btn-gold" href="{{youtube}}" target="_blank" rel="noopener">{{homePreachCta}}</a>
+      </div>
+    </section>
+
+    <section class="section" id="visit">
+      <div class="wrap visit-grid">
+        <div>
+          <p class="eyebrow dark">{{homeVisitEyebrow}}</p>
+          <h2>{{homeVisitTitle}}</h2>
+          <address>
+            <strong>The Light of God Ministries</strong><br>
+            Bräunlichgasse 24a<br>
+            2700 Wiener Neustadt, {{country}}
+          </address>
+          <div class="cta">
+            <a class="btn btn-indigo" href="{{mapsPlace}}" target="_blank" rel="noopener">{{openMaps}}</a>
+            <a class="btn btn-outline" href="tel:+436769465931">{{callUs}}</a>
+          </div>
+          <p class="more"><a class="link" href="{{hVisit}}">{{homeVisitCta}}</a></p>
+        </div>
+        <ul class="times">
+          <li><span>{{daySun}}</span> {{svcService}} · 10:00 – 12:30</li>
+          <li><span>{{dayWed}}</span> {{svcPrayer}} · 17:00 – 18:30</li>
+          <li><span>{{dayMon}}</span> {{svcBible}} · 17:30 – 19:00</li>
+        </ul>
+      </div>
+    </section>

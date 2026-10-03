@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{pageTitle}}</title>
+  <meta name="description" content="{{pageDesc}}">
+  <meta name="theme-color" content="#14153f">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{pageTitle}}">
+  <meta property="og:description" content="{{pageDesc}}">
+  <meta property="og:locale" content="{{ogLocale}}">
+  <link rel="icon" href="{{root}}assets/logo-96.jpg">
+  <link rel="preload" href="{{root}}assets/fonts/montserrat-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{root}}css/fonts.css">
+  <link rel="stylesheet" href="{{root}}css/style.css">
+</head>
+<body class="page-{{page}}">
+  <a class="skip" href="#main">{{skip}}</a>
+  <header class="nav" id="nav">
+    <a class="brand" href="{{hHome}}" aria-label="{{brandAria}}">
+      <img src="{{root}}assets/logo-96.jpg" alt="" width="44" height="44">
+      <span>Light of God <small>Wiener Neustadt</small></span>
+    </a>
+    <button class="burger" id="burger" aria-label="{{menuAria}}" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+    <nav id="menu" class="menu" aria-label="{{menuAria}}">
+      <a href="{{hHome}}"{{cur_home}}>{{navHome}}</a>
+      <a href="{{hAbout}}"{{cur_about}}>{{navAbout}}</a>
+      <a href="{{hGatherings}}"{{cur_gatherings}}>{{navGatherings}}</a>
+      <a href="{{hPreachings}}"{{cur_preachings}}>{{navPreachings}}</a>
+      <a href="{{hVisit}}"{{cur_visit}}>{{navVisit}}</a>
+      <span class="lang" role="group" aria-label="{{langAria}}">{{langSwitch}}</span>
+      <a href="{{hVisit}}" class="btn btn-gold btn-sm">{{navCta}}</a>
+    </nav>
+  </header>
+
+  <main id="main">
+{{content}}
+  </main>
+
+  <footer class="footer">
+    <div class="wrap foot-grid">
+      <div class="foot-brand">
+        <img src="{{root}}assets/logo-96.jpg" alt="" width="56" height="56">
+        <p><strong>The Light of God Ministries International</strong><br>Bräunlichgasse 24a<br>2700 Wiener Neustadt, {{country}}<br><a href="tel:+436769465931">+43 676 9465931</a></p>
+      </div>
+      <nav class="foot-links" aria-label="{{footExplore}}">
+        <h3>{{footExplore}}</h3>
+        <a href="{{hHome}}">{{navHome}}</a>
+        <a href="{{hAbout}}">{{navAbout}}</a>
+        <a href="{{hGatherings}}">{{navGatherings}}</a>
+        <a href="{{hPreachings}}">{{navPreachings}}</a>
+        <a href="{{hVisit}}">{{navVisit}}</a>
+      </nav>
+      <div class="foot-social">
+        <h3>{{footFollow}}</h3>
+        <div class="icons">{{socialIcons}}</div>
+      </div>
+    </div>
+    <div class="wrap foot-bottom">
+      <p class="copy">© <span id="year">2026</span> The Light of God Ministries International. {{rights}}</p>
+      <a href="{{hLegal}}"{{cur_legal}}>{{footLegal}}</a>
+    </div>
+  </footer>
+
+  <script>window.I18N = {{i18nJson}};</script>
+  <script src="{{root}}js/main.js"></script>
+</body>
+</html>
