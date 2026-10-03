@@ -20,7 +20,7 @@
   <header class="nav" id="nav">
     <a class="brand" href="../fr/" aria-label="The Light of God Ministries – accueil">
       <img src="../assets/logo-96.jpg" alt="" width="44" height="44">
-      <span>Light of God <small>Wiener Neustadt</small></span>
+      <span>Light of God Ministries <small>Wiener Neustadt</small></span>
     </a>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
     <nav id="menu" class="menu" aria-label="Menu">
@@ -35,8 +35,12 @@
   </header>
 
   <main id="main">
-    <section class="hero">
-      <div class="rays" aria-hidden="true"></div>
+    <section class="hero" id="hero">
+      <div class="hero-video" aria-hidden="true">
+        <video id="heroVideo" muted playsinline preload="auto" tabindex="-1"
+          data-large="../assets/hero-intro.mp4" data-small="../assets/hero-intro-720.mp4"></video>
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Église évangélique · Wiener Neustadt, Autriche</p>
@@ -49,9 +53,6 @@
           </div>
           <p class="next" id="nextService" aria-live="polite"></p>
         </div>
-        <figure class="hero-art">
-          <img src="../assets/welcome-poster.jpg" alt="Affiche de bienvenue : lundi étude biblique en ligne 17h30–19h00, mercredi réunion de prière 17h00–18h30, dimanche culte 10h00–12h30, Bräunlichgasse 24, 2700 Wiener Neustadt" width="1920" height="1066">
-        </figure>
       </div>
     </section>
 

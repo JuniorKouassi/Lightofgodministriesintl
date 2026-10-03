@@ -1,5 +1,9 @@
-    <section class="hero">
-      <div class="rays" aria-hidden="true"></div>
+    <section class="hero" id="hero">
+      <div class="hero-video" aria-hidden="true">
+        <video id="heroVideo" muted playsinline preload="auto" tabindex="-1"
+          data-large="{{root}}assets/hero-intro.mp4" data-small="{{root}}assets/hero-intro-720.mp4"></video>
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">{{heroEyebrow}}</p>
@@ -12,9 +16,6 @@
           </div>
           <p class="next" id="nextService" aria-live="polite"></p>
         </div>
-        <figure class="hero-art">
-          <img src="{{root}}assets/welcome-poster.jpg" alt="{{posterAlt}}" width="1920" height="1066">
-        </figure>
       </div>
     </section>
 

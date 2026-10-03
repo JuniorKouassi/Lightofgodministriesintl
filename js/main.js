@@ -79,6 +79,23 @@
     });
   }
 
+  // Hero logo intro: plays once and holds on the final frame.
+  // Skipped (static final frame) for reduced-motion and data-saver visitors.
+  var hero = document.getElementById('hero');
+  var hv = document.getElementById('heroVideo');
+  if (hero && hv) {
+    var conn = navigator.connection || {};
+    var skip = (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) || conn.saveData;
+    if (!skip) {
+      hero.classList.add('will-play');
+      hv.src = (window.matchMedia && matchMedia('(max-width: 860px)').matches) ? hv.getAttribute('data-small') : hv.getAttribute('data-large');
+      hv.addEventListener('playing', function () { hero.classList.add('video-on'); });
+      hv.addEventListener('error', function () { hero.classList.remove('will-play'); });
+      var p = hv.play();
+      if (p && p.catch) p.catch(function () { hero.classList.remove('will-play'); });
+    }
+  }
+
   // Scroll reveal
   var items = document.querySelectorAll('.card, .about-grid > *, .visit-grid > *, .leader-grid > *, .watch .wrap > *, .social-link');
   items.forEach(function (i) { i.classList.add('reveal'); });
