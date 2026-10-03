@@ -54,18 +54,18 @@ module.exports = {
   prMore: 'You can also find us on',
 
   visitTitle: 'Visit & Contact – The Light of God Ministries',
-  visitDesc: 'Find The Light of God Ministries at Bräunlichgasse 24a, 2700 Wiener Neustadt. Call or message us on WhatsApp: +43 676 9465931.',
+  visitDesc: 'Find The Light of God Ministries at Bräunlichgasse 24, 2700 Wiener Neustadt. Call or message us on WhatsApp: +43 676 9465931.',
   visitH1: 'Visit & Contact', visitLead: 'We would love to meet you.',
   addrLabel: 'Address', phoneLabel: 'Phone & WhatsApp', timesLabel: 'Gatherings',
   mapConsent: 'To protect your privacy, the map loads only after you click. Loading it connects your browser to Google.',
-  mapLoad: 'Load map', mapTitle: 'Map of Bräunlichgasse 24a, Wiener Neustadt',
+  mapLoad: 'Load map', mapTitle: 'Map of Bräunlichgasse 24, Wiener Neustadt',
 
   legalTitle: 'Legal notice & privacy – The Light of God Ministries',
   legalDesc: 'Legal notice (Impressum) and privacy information for the website of The Light of God Ministries International, Wiener Neustadt.',
   legalH1: 'Legal notice & privacy',
   legalBody: `
 <h2>Legal notice</h2>
-<p><strong>The Light of God Ministries International – Wiener Neustadt</strong><br>Bräunlichgasse 24a<br>2700 Wiener Neustadt, Austria<br>Phone / WhatsApp: <a href="tel:+436769465931">+43 676 9465931</a></p>
+<p><strong>The Light of God Ministries International – Wiener Neustadt</strong><br>Bräunlichgasse 24<br>2700 Wiener Neustadt, Austria<br>Phone / WhatsApp: <a href="tel:+436769465931">+43 676 9465931</a></p>
 <p>Represented by: Pastor Osas Obakpolor</p>
 <p>Legal form and register number: <em>to be added by the church.</em></p>
 <h2>Privacy</h2>
