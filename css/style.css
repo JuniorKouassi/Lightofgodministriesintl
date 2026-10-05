@@ -239,7 +239,7 @@ h2.h3:first-child{margin-top:0}
 .card.featured .btn-gold{background:#fff;color:var(--indigo-950)}
 
 /* language flags */
-.lang a{display:inline-flex;align-items:center;justify-content:center;padding:.3rem .5rem;opacity:.8}
-.lang a svg{display:block;width:22px;height:15px;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.25)}
+.lang a{display:inline-flex;align-items:center;justify-content:center;padding:.25rem .4rem;opacity:.8}
+.lang a svg{display:block;width:16px;height:11px;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.25)}
 .lang a[aria-current="true"]{opacity:1}
 .lang a:hover{opacity:1}
