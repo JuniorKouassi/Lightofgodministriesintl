@@ -36,6 +36,12 @@ const SOCIALS = [
   ['TikTok', LINKS.tiktok, 'tt'], ['WhatsApp', LINKS.whatsappUrl, 'wa']
 ];
 
+const FLAGS = {
+  en: { name: 'English', svg: '<svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#012169"/><path d="M0 0L30 20M30 0L0 20" stroke="#fff" stroke-width="4"/><path d="M0 0L30 20M30 0L0 20" stroke="#C8102E" stroke-width="1.4"/><path d="M15 0V20M0 10H30" stroke="#fff" stroke-width="6"/><path d="M15 0V20M0 10H30" stroke="#C8102E" stroke-width="3.6"/></svg>' },
+  de: { name: 'Deutsch', svg: '<svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#000"/><rect y="6.67" width="30" height="6.67" fill="#DD0000"/><rect y="13.33" width="30" height="6.67" fill="#FFCE00"/></svg>' },
+  fr: { name: 'Français', svg: '<svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><rect width="10" height="20" fill="#0055A4"/><rect x="20" width="10" height="20" fill="#EF4135"/></svg>' }
+};
+
 const read = f => fs.readFileSync(path.join(__dirname, f), 'utf8');
 const layout = read('src/layout.html');
 const pageSrc = Object.fromEntries(PAGES.map(p => [p.id, read(`src/pages/${p.id}.html`)]));
@@ -69,7 +75,7 @@ function build() {
       }
       vars.langSwitch = LANGS.map(l => {
         const cur = l === lang;
-        return `<a href="${href(l, page)}" lang="${l}" hreflang="${l}"${cur ? ' aria-current="true"' : ''}>${require(`./src/i18n/${l}.js`).label}</a>`;
+        return `<a href="${href(l, page)}" lang="${l}" hreflang="${l}" title="${FLAGS[l].name}" aria-label="${FLAGS[l].name}"${cur ? ' aria-current="true"' : ''}>${FLAGS[l].svg}</a>`;
       }).join('');
       vars.socialIcons = SOCIALS.map(([n, u]) => `<a href="${u}" target="_blank" rel="noopener" aria-label="${n}">${ICONS[n]}</a>`).join('');
       vars.socialPills = SOCIALS.concat([['Google', LINKS.mapsPlace, 'map-link']])
