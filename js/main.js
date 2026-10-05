@@ -79,7 +79,7 @@
     });
   }
 
-  // Hero logo intro: plays once and holds on the final frame.
+  // Hero logo intro: loops continuously, fading out at the end of each pass so the restart is smooth.
   // Skipped (static final frame) for reduced-motion and data-saver visitors.
   var hero = document.getElementById('hero');
   var hv = document.getElementById('heroVideo');
@@ -90,6 +90,9 @@
       hero.classList.add('will-play');
       hv.src = (window.matchMedia && matchMedia('(max-width: 860px)').matches) ? hv.getAttribute('data-small') : hv.getAttribute('data-large');
       hv.addEventListener('playing', function () { hero.classList.add('video-on'); });
+      hv.addEventListener('timeupdate', function () {
+        hero.classList.toggle('fade-out', !!hv.duration && hv.duration - hv.currentTime < 0.7);
+      });
       hv.addEventListener('error', function () { hero.classList.remove('will-play'); });
       var p = hv.play();
       if (p && p.catch) p.catch(function () { hero.classList.remove('will-play'); });

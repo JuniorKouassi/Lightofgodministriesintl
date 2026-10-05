@@ -243,3 +243,4 @@ h2.h3:first-child{margin-top:0}
 .lang a svg{display:block;width:16px;height:11px;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.25)}
 .lang a[aria-current="true"]{opacity:1}
 .lang a:hover{opacity:1}
+.hero.fade-out .hero-video video{opacity:0}
