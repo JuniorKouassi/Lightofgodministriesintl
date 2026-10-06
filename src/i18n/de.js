@@ -24,7 +24,7 @@ module.exports = {
   heroSub: 'Jeder ist willkommen. Kommen Sie, wie Sie sind, und begegnen Sie Gott mit uns.',
   ctaJoin: 'Besuchen Sie uns am Sonntag', ctaDirections: 'Route planen',
   posterAlt: 'Willkommensplakat: Montag Online-Bibelstudium 17:30–19:00, Mittwoch Gebetstreffen 17:00–18:30, Sonntag Gottesdienst 10:00–12:30, Bräunlichgasse 24, 2700 Wiener Neustadt',
-  homeServicesEyebrow: 'Seien Sie dabei', homeServicesTitle: 'Unsere Woche', homeMore: 'Alle Dienste →',
+  homeServicesEyebrow: 'Seien Sie dabei', homeServicesTitle: 'Wöchentliche Dienste', homeMore: 'Alle Dienste →',
   homeAboutEyebrow: 'Wer wir sind', homeAboutTitle: 'Ein Licht in der Stadt',
   homeAboutText: 'The Light of God Ministries International ist eine evangelikale Gospel-Gemeinde in Wiener Neustadt, Österreich.',
   homeAboutLink: 'Über uns →',

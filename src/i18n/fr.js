@@ -24,7 +24,7 @@ module.exports = {
   heroSub: 'Tout le monde est le bienvenu. Venez comme vous êtes et rencontrez Dieu avec nous.',
   ctaJoin: 'Rejoignez-nous dimanche', ctaDirections: 'Itinéraire',
   posterAlt: 'Affiche de bienvenue : lundi étude biblique en ligne 17h30–19h00, mercredi réunion de prière 17h00–18h30, dimanche culte 10h00–12h30, Bräunlichgasse 24, 2700 Wiener Neustadt',
-  homeServicesEyebrow: 'Rejoignez-nous', homeServicesTitle: 'Nos rencontres de la semaine', homeMore: 'Tous les cultes →',
+  homeServicesEyebrow: 'Rejoignez-nous', homeServicesTitle: 'Nos cultes de la semaine', homeMore: 'Tous les cultes →',
   homeAboutEyebrow: 'Qui nous sommes', homeAboutTitle: 'Une lumière dans la ville',
   homeAboutText: 'The Light of God Ministries International est une église évangélique à Wiener Neustadt, en Autriche.',
   homeAboutLink: 'À propos →',

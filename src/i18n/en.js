@@ -24,7 +24,7 @@ module.exports = {
   heroSub: 'Everyone is welcome. Come as you are and meet God with us.',
   ctaJoin: 'Join us this Sunday', ctaDirections: 'Get directions',
   posterAlt: 'Welcome poster: Monday online Bible study 17:30–19:00, Wednesday prayer meeting 17:00–18:30, Sunday church service 10:00–12:30, Bräunlichgasse 24, 2700 Wiener Neustadt',
-  homeServicesEyebrow: 'Join us', homeServicesTitle: 'Weekly gatherings', homeMore: 'All services →',
+  homeServicesEyebrow: 'Join us', homeServicesTitle: 'Weekly services', homeMore: 'All services →',
   homeAboutEyebrow: 'Who we are', homeAboutTitle: 'A light in the city',
   homeAboutText: 'The Light of God Ministries International is an evangelical gospel church in Wiener Neustadt, Austria.',
   homeAboutLink: 'About us →',
