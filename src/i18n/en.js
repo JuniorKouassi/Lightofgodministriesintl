@@ -1,7 +1,7 @@
 module.exports = {
   lang: 'en', ogLocale: 'en_GB', label: 'EN',
   brandAria: 'The Light of God Ministries – home', menuAria: 'Menu', langAria: 'Language',
-  navHome: 'Home', navAbout: 'About', navGatherings: 'Gatherings', navPreachings: 'Preachings', navVisit: 'Visit & Contact', navCta: 'Contact us',
+  navHome: 'Home', navAbout: 'About', navGatherings: 'Services', navPreachings: 'Preachings', navVisit: 'Visit & Contact', navCta: 'Contact us',
   country: 'Austria', rights: 'All rights reserved.',
   footExplore: 'Explore', footFollow: 'Follow us', footLegal: 'Legal notice & privacy',
 
@@ -24,7 +24,7 @@ module.exports = {
   heroSub: 'Everyone is welcome. Come as you are and meet God with us.',
   ctaJoin: 'Join us this Sunday', ctaDirections: 'Get directions',
   posterAlt: 'Welcome poster: Monday online Bible study 17:30–19:00, Wednesday prayer meeting 17:00–18:30, Sunday church service 10:00–12:30, Bräunlichgasse 24, 2700 Wiener Neustadt',
-  homeServicesEyebrow: 'Join us', homeServicesTitle: 'Weekly gatherings', homeMore: 'All gatherings →',
+  homeServicesEyebrow: 'Join us', homeServicesTitle: 'Weekly gatherings', homeMore: 'All services →',
   homeAboutEyebrow: 'Who we are', homeAboutTitle: 'A light in the city',
   homeAboutText: 'The Light of God Ministries International is an evangelical gospel church in Wiener Neustadt, Austria.',
   homeAboutLink: 'About us →',
@@ -41,9 +41,9 @@ module.exports = {
   leadPastor: 'Pastor Osas Obakpolor', leadDeaconess: 'Deaconess Petra Obakpolor',
   leadAlt: 'Pastor Osas Obakpolor and Deaconess Petra Obakpolor, dressed in purple traditional attire',
 
-  gathTitle: 'Gatherings – The Light of God Ministries',
+  gathTitle: 'Services – The Light of God Ministries',
   gathDesc: 'Weekly gatherings in Wiener Neustadt: Sunday church service 10:00–12:30, Wednesday prayer meeting 17:00–18:30, Monday online Bible study 17:30–19:00.',
-  gathH1: 'Gatherings', gathLead: 'Everyone is welcome. Come as you are.',
+  gathH1: 'Services', gathLead: 'Everyone is welcome. Come as you are.',
   gathWhere: 'Where', gathOnline: 'Online',
 
   prTitle: 'Preachings – The Light of God Ministries',

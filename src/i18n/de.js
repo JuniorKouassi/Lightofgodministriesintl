@@ -1,7 +1,7 @@
 module.exports = {
   lang: 'de', ogLocale: 'de_AT', label: 'DE',
   brandAria: 'The Light of God Ministries – Startseite', menuAria: 'Menü', langAria: 'Sprache',
-  navHome: 'Start', navAbout: 'Über uns', navGatherings: 'Treffen', navPreachings: 'Predigten', navVisit: 'Besuch & Kontakt', navCta: 'Kontakt aufnehmen',
+  navHome: 'Start', navAbout: 'Über uns', navGatherings: 'Dienste', navPreachings: 'Predigten', navVisit: 'Besuch & Kontakt', navCta: 'Kontakt aufnehmen',
   country: 'Österreich', rights: 'Alle Rechte vorbehalten.',
   footExplore: 'Entdecken', footFollow: 'Folgen Sie uns', footLegal: 'Impressum & Datenschutz',
 
@@ -24,7 +24,7 @@ module.exports = {
   heroSub: 'Jeder ist willkommen. Kommen Sie, wie Sie sind, und begegnen Sie Gott mit uns.',
   ctaJoin: 'Besuchen Sie uns am Sonntag', ctaDirections: 'Route planen',
   posterAlt: 'Willkommensplakat: Montag Online-Bibelstudium 17:30–19:00, Mittwoch Gebetstreffen 17:00–18:30, Sonntag Gottesdienst 10:00–12:30, Bräunlichgasse 24, 2700 Wiener Neustadt',
-  homeServicesEyebrow: 'Seien Sie dabei', homeServicesTitle: 'Unsere Woche', homeMore: 'Alle Treffen →',
+  homeServicesEyebrow: 'Seien Sie dabei', homeServicesTitle: 'Unsere Woche', homeMore: 'Alle Dienste →',
   homeAboutEyebrow: 'Wer wir sind', homeAboutTitle: 'Ein Licht in der Stadt',
   homeAboutText: 'The Light of God Ministries International ist eine evangelikale Gospel-Gemeinde in Wiener Neustadt, Österreich.',
   homeAboutLink: 'Über uns →',
@@ -41,9 +41,9 @@ module.exports = {
   leadPastor: 'Pastor Osas Obakpolor', leadDeaconess: 'Diakonin Petra Obakpolor',
   leadAlt: 'Pastor Osas Obakpolor und Diakonin Petra Obakpolor in lilafarbener traditioneller Kleidung',
 
-  gathTitle: 'Treffen – The Light of God Ministries',
+  gathTitle: 'Dienste – The Light of God Ministries',
   gathDesc: 'Wöchentliche Treffen in Wiener Neustadt: Gottesdienst sonntags 10:00–12:30, Gebetstreffen mittwochs 17:00–18:30, Online-Bibelstudium montags 17:30–19:00.',
-  gathH1: 'Treffen', gathLead: 'Jeder ist willkommen. Kommen Sie, wie Sie sind.',
+  gathH1: 'Dienste', gathLead: 'Jeder ist willkommen. Kommen Sie, wie Sie sind.',
   gathWhere: 'Wo', gathOnline: 'Online',
 
   prTitle: 'Predigten – The Light of God Ministries',

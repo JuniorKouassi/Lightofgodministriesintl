@@ -1,7 +1,7 @@
 module.exports = {
   lang: 'fr', ogLocale: 'fr_FR', label: 'FR',
   brandAria: 'The Light of God Ministries – accueil', menuAria: 'Menu', langAria: 'Langue',
-  navHome: 'Accueil', navAbout: 'À propos', navGatherings: 'Rencontres', navPreachings: 'Prédications', navVisit: 'Visite & contact', navCta: 'Nous contacter',
+  navHome: 'Accueil', navAbout: 'À propos', navGatherings: 'Cultes', navPreachings: 'Prédications', navVisit: 'Visite & contact', navCta: 'Nous contacter',
   country: 'Autriche', rights: 'Tous droits réservés.',
   footExplore: 'Explorer', footFollow: 'Suivez-nous', footLegal: 'Mentions légales & confidentialité',
 
@@ -24,7 +24,7 @@ module.exports = {
   heroSub: 'Tout le monde est le bienvenu. Venez comme vous êtes et rencontrez Dieu avec nous.',
   ctaJoin: 'Rejoignez-nous dimanche', ctaDirections: 'Itinéraire',
   posterAlt: 'Affiche de bienvenue : lundi étude biblique en ligne 17h30–19h00, mercredi réunion de prière 17h00–18h30, dimanche culte 10h00–12h30, Bräunlichgasse 24, 2700 Wiener Neustadt',
-  homeServicesEyebrow: 'Rejoignez-nous', homeServicesTitle: 'Nos rencontres de la semaine', homeMore: 'Toutes les rencontres →',
+  homeServicesEyebrow: 'Rejoignez-nous', homeServicesTitle: 'Nos rencontres de la semaine', homeMore: 'Tous les cultes →',
   homeAboutEyebrow: 'Qui nous sommes', homeAboutTitle: 'Une lumière dans la ville',
   homeAboutText: 'The Light of God Ministries International est une église évangélique à Wiener Neustadt, en Autriche.',
   homeAboutLink: 'À propos →',
@@ -41,9 +41,9 @@ module.exports = {
   leadPastor: 'Pasteur Osas Obakpolor', leadDeaconess: 'Diaconesse Petra Obakpolor',
   leadAlt: 'Le pasteur Osas Obakpolor et la diaconesse Petra Obakpolor, en tenues traditionnelles violettes',
 
-  gathTitle: 'Rencontres – The Light of God Ministries',
+  gathTitle: 'Cultes – The Light of God Ministries',
   gathDesc: 'Rencontres hebdomadaires à Wiener Neustadt : culte le dimanche 10h00–12h30, réunion de prière le mercredi 17h00–18h30, étude biblique en ligne le lundi 17h30–19h00.',
-  gathH1: 'Rencontres', gathLead: 'Tout le monde est le bienvenu. Venez comme vous êtes.',
+  gathH1: 'Cultes', gathLead: 'Tout le monde est le bienvenu. Venez comme vous êtes.',
   gathWhere: 'Où', gathOnline: 'En ligne',
 
   prTitle: 'Prédications – The Light of God Ministries',
