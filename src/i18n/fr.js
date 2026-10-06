@@ -20,7 +20,7 @@ module.exports = {
   homeTitle: 'The Light of God Ministries International – Wiener Neustadt',
   homeDesc: 'Église évangélique à Wiener Neustadt, en Autriche. Culte le dimanche de 10h00 à 12h30, prière le mercredi, étude biblique en ligne le lundi. Tout le monde est le bienvenu.',
   heroEyebrow: 'Église évangélique · Wiener Neustadt, Autriche',
-  heroTitle: 'Bienvenue à <em>The Light of God</em> Ministries',
+  heroTitle: '<em>The Light of God Ministries Intl</em>',
   heroSub: 'Tout le monde est le bienvenu. Venez comme vous êtes et rencontrez Dieu avec nous.',
   ctaJoin: 'Rejoignez-nous dimanche', ctaDirections: 'Itinéraire',
   posterAlt: 'Affiche de bienvenue : lundi étude biblique en ligne 17h30–19h00, mercredi réunion de prière 17h00–18h30, dimanche culte 10h00–12h30, Bräunlichgasse 24, 2700 Wiener Neustadt',
@@ -77,6 +77,18 @@ module.exports = {
 <li>Si vous nous appelez ou nous écrivez sur WhatsApp, nous utilisons vos coordonnées uniquement pour vous répondre.</li>
 <li>Vos droits selon le RGPD : accès, rectification, effacement, limitation, portabilité et opposition. Contactez-nous par téléphone. Vous pouvez aussi déposer une plainte auprès de l’autorité autrichienne de protection des données (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener">dsb.gv.at</a>).</li>
 </ul>`,
+
+  navGive: 'Faire un don',
+  giveTitle: 'Faire un don – don libre | The Light of God Ministries',
+  giveDesc: 'Soutenez l’œuvre de The Light of God Ministries Intl à Wiener Neustadt par un don libre.',
+  giveEyebrow: 'Don libre', giveH1: 'Faire un don',
+  giveLead: 'Donnez librement et avec joie. Votre don libre soutient le ministère à Wiener Neustadt.',
+  giveVerse: 'Que chacun donne comme il l’a résolu en son cœur, sans tristesse ni contrainte ; car Dieu aime celui qui donne avec joie.',
+  giveVerseRef: '2 Corinthiens 9:7',
+  giveHowTitle: 'Comment donner',
+  giveContactText: 'Pour donner, appelez-nous ou écrivez-nous sur WhatsApp et nous vous enverrons les coordonnées.',
+  giveBankTitle: 'Virement bancaire', giveIban: 'IBAN', giveBic: 'BIC', giveRef: 'Référence',
+  giveLinkCta: 'Donner en ligne', giveThanks: 'Merci pour votre générosité.',
 
   js: {
     days: ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'],

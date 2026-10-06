@@ -10,6 +10,7 @@ const PAGES = [
   { id: 'gatherings', slug: 'gatherings', title: 'gathTitle', desc: 'gathDesc' },
   { id: 'preachings', slug: 'preachings', title: 'prTitle', desc: 'prDesc' },
   { id: 'visit', slug: 'visit', title: 'visitTitle', desc: 'visitDesc' },
+  { id: 'give', slug: 'give', title: 'giveTitle', desc: 'giveDesc' },
   { id: 'legal', slug: 'legal', title: 'legalTitle', desc: 'legalDesc' }
 ];
 const SKIP = { en: 'Skip to content', de: 'Zum Inhalt springen', fr: 'Aller au contenu' };
@@ -22,6 +23,10 @@ const LINKS = {
   whatsappUrl: 'https://wa.me/436769465931',
   mapsPlace: 'https://maps.app.goo.gl/q8VCxmj5MTgP4SUw8'
 };
+
+// Giving details. Fill these in to show a bank-transfer card and/or an online-giving button on the Give page.
+// While empty, the page shows only the "call or WhatsApp us" card (no details are invented).
+const GIVE = { holder: '', iban: '', bic: '', reference: '', paymentLink: '' };
 
 const ICONS = {
   Facebook: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8.2h2.8l.5-3.3h-3.3V8.4c0-.9.4-1.7 1.8-1.7H17V3.8c-.3 0-1.3-.2-2.5-.2-2.6 0-4.3 1.6-4.3 4.4v2.5H7.4v3.3h2.8V22z"/></svg>',
@@ -81,6 +86,8 @@ function build() {
       vars.socialPills = SOCIALS.concat([['Google', LINKS.mapsPlace, 'map-link']])
         .map(([n, u, c]) => `<a class="social-link ${c}" href="${u}" target="_blank" rel="noopener">${ICONS[n]} ${n === 'Google' ? 'Google Maps' : n}</a>`).join('\n          ');
       vars.iconInstagram = ICONS.Instagram;
+      vars.giveBankCard = GIVE.iban ? `<article class="card"><span class="day">${t.giveBankTitle}</span><h3>${GIVE.holder}</h3><dl class="bank"><dt>${t.giveIban}</dt><dd>${GIVE.iban}</dd>${GIVE.bic ? `<dt>${t.giveBic}</dt><dd>${GIVE.bic}</dd>` : ''}${GIVE.reference ? `<dt>${t.giveRef}</dt><dd>${GIVE.reference}</dd>` : ''}</dl></article>` : '';
+      vars.giveLinkCard = GIVE.paymentLink ? `<article class="card featured"><span class="day">${t.giveEyebrow}</span><h3>${t.giveH1}</h3><p>${t.giveThanks}</p><a class="btn btn-gold" href="${GIVE.paymentLink}" target="_blank" rel="noopener">${t.giveLinkCta}</a></article>` : '';
       vars.iconTiktok = ICONS.TikTok;
       vars.i18nJson = JSON.stringify(t.js).replace(/</g, '\\u003c');
 

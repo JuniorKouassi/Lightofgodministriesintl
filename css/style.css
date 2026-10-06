@@ -244,3 +244,5 @@ h2.h3:first-child{margin-top:0}
 .lang a[aria-current="true"]{opacity:1}
 .lang a:hover{opacity:1}
 .hero.fade-out .hero-video video{opacity:0}
+
+.bank{display:grid;grid-template-columns:auto 1fr;gap:.4rem 1rem;margin:.5rem 0 0}.bank dt{font-weight:700;color:var(--indigo-700)}.bank dd{margin:0;word-break:break-all}

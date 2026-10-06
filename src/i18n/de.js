@@ -20,7 +20,7 @@ module.exports = {
   homeTitle: 'The Light of God Ministries International – Wiener Neustadt',
   homeDesc: 'Evangelikale Gospel-Gemeinde in Wiener Neustadt, Österreich. Gottesdienst sonntags 10:00–12:30, Gebet mittwochs, Online-Bibelstudium montags. Jeder ist willkommen.',
   heroEyebrow: 'Evangelikale Gospel-Gemeinde · Wiener Neustadt, Österreich',
-  heroTitle: 'Willkommen bei <em>The Light of God</em> Ministries',
+  heroTitle: '<em>The Light of God Ministries Intl</em>',
   heroSub: 'Jeder ist willkommen. Kommen Sie, wie Sie sind, und begegnen Sie Gott mit uns.',
   ctaJoin: 'Besuchen Sie uns am Sonntag', ctaDirections: 'Route planen',
   posterAlt: 'Willkommensplakat: Montag Online-Bibelstudium 17:30–19:00, Mittwoch Gebetstreffen 17:00–18:30, Sonntag Gottesdienst 10:00–12:30, Bräunlichgasse 24, 2700 Wiener Neustadt',
@@ -77,6 +77,18 @@ module.exports = {
 <li>Wenn Sie uns anrufen oder per WhatsApp schreiben, verwenden wir Ihre Angaben ausschließlich, um Ihnen zu antworten.</li>
 <li>Ihre Rechte nach der DSGVO: Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch. Kontaktieren Sie uns telefonisch. Sie können sich außerdem bei der Österreichischen Datenschutzbehörde beschweren (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener">dsb.gv.at</a>).</li>
 </ul>`,
+
+  navGive: 'Spenden',
+  giveTitle: 'Spenden – freiwillige Gabe | The Light of God Ministries',
+  giveDesc: 'Unterstützen Sie die Arbeit von The Light of God Ministries Intl in Wiener Neustadt mit einer freiwilligen Gabe.',
+  giveEyebrow: 'Freiwillige Gabe', giveH1: 'Spenden',
+  giveLead: 'Geben Sie frei und mit Freude. Ihre freiwillige Gabe unterstützt den Dienst in Wiener Neustadt.',
+  giveVerse: 'Ein jeder, wie er’s sich im Herzen vorgenommen hat, nicht mit Unwillen oder aus Zwang; denn einen fröhlichen Geber hat Gott lieb.',
+  giveVerseRef: '2. Korinther 9,7',
+  giveHowTitle: 'So können Sie geben',
+  giveContactText: 'Rufen Sie uns an oder schreiben Sie uns per WhatsApp – wir senden Ihnen die Angaben.',
+  giveBankTitle: 'Banküberweisung', giveIban: 'IBAN', giveBic: 'BIC', giveRef: 'Verwendungszweck',
+  giveLinkCta: 'Online spenden', giveThanks: 'Vielen Dank für Ihre Großzügigkeit.',
 
   js: {
     days: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],

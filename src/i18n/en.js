@@ -20,7 +20,7 @@ module.exports = {
   homeTitle: 'The Light of God Ministries International – Wiener Neustadt',
   homeDesc: 'Evangelical gospel church in Wiener Neustadt, Austria. Sunday service 10:00–12:30, Wednesday prayer, Monday online Bible study. Everyone is welcome.',
   heroEyebrow: 'Evangelical Gospel Church · Wiener Neustadt, Austria',
-  heroTitle: 'Welcome to <em>The Light of God</em> Ministries',
+  heroTitle: '<em>The Light of God Ministries Intl</em>',
   heroSub: 'Everyone is welcome. Come as you are and meet God with us.',
   ctaJoin: 'Join us this Sunday', ctaDirections: 'Get directions',
   posterAlt: 'Welcome poster: Monday online Bible study 17:30–19:00, Wednesday prayer meeting 17:00–18:30, Sunday church service 10:00–12:30, Bräunlichgasse 24, 2700 Wiener Neustadt',
@@ -77,6 +77,18 @@ module.exports = {
 <li>If you call or message us on WhatsApp, we use your details only to answer you.</li>
 <li>Your rights under the GDPR: access, rectification, erasure, restriction, data portability and objection. Contact us by phone. You may also complain to the Austrian Data Protection Authority (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener">dsb.gv.at</a>).</li>
 </ul>`,
+
+  navGive: 'Give',
+  giveTitle: 'Give – free-will gift | The Light of God Ministries',
+  giveDesc: 'Support the work of The Light of God Ministries Intl in Wiener Neustadt with a free-will gift.',
+  giveEyebrow: 'Free-will gift', giveH1: 'Give',
+  giveLead: 'Give freely and joyfully. Your free-will gift supports the ministry in Wiener Neustadt.',
+  giveVerse: 'Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver.',
+  giveVerseRef: '2 Corinthians 9:7',
+  giveHowTitle: 'How to give',
+  giveContactText: 'To give, call or message us on WhatsApp and we will send you the details.',
+  giveBankTitle: 'Bank transfer', giveIban: 'IBAN', giveBic: 'BIC', giveRef: 'Reference',
+  giveLinkCta: 'Give online', giveThanks: 'Thank you for your generosity.',
 
   js: {
     days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
