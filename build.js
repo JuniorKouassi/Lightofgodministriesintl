@@ -26,7 +26,7 @@ const LINKS = {
 
 // Giving details. Fill these in to show a bank-transfer card and/or an online-giving button on the Give page.
 // While empty, the page shows only the "call or WhatsApp us" card (no details are invented).
-const GIVE = { holder: '', iban: '', bic: '', reference: '', paymentLink: '' };
+const GIVE = { holder: 'Osaremwanta Obakpolor', iban: 'AT56 2026 7020 1202 5629', bic: 'WINSATWN', reference: '', paymentLink: '' };
 
 const ICONS = {
   Facebook: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8.2h2.8l.5-3.3h-3.3V8.4c0-.9.4-1.7 1.8-1.7H17V3.8c-.3 0-1.3-.2-2.5-.2-2.6 0-4.3 1.6-4.3 4.4v2.5H7.4v3.3h2.8V22z"/></svg>',
