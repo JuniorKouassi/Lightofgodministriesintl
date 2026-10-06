@@ -105,6 +105,9 @@ module.exports = {
     { icon: 'kids', name: 'Département enfants', text: 'Un lieu où les enfants découvrent Jésus de façon joyeuse, sûre et bienveillante.' }
   ],
 
+  depViewPhotos: 'Voir les photos', depBackAll: '← Tous les départements', depGalleryEyebrow: 'Galerie photo',
+  depPhotoAlt: '{name} – photo {n}', lbClose: 'Fermer', lbPrev: 'Photo précédente', lbNext: 'Photo suivante',
+
   js: {
     days: ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'],
     labels: { sun: 'Culte', mon: 'Étude biblique en ligne', wed: 'Réunion de prière' },

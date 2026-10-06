@@ -105,6 +105,9 @@ module.exports = {
     { icon: 'kids', name: 'Children’s Department', text: 'A place where children learn about Jesus in a fun, safe and caring way.' }
   ],
 
+  depViewPhotos: 'View photos', depBackAll: '← All departments', depGalleryEyebrow: 'Photo gallery',
+  depPhotoAlt: '{name} – photo {n}', lbClose: 'Close', lbPrev: 'Previous photo', lbNext: 'Next photo',
+
   js: {
     days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
     labels: { sun: 'Church Service', mon: 'Online Bible Study', wed: 'Prayer Meeting' },

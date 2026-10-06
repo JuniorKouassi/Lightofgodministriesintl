@@ -35,6 +35,14 @@ const DEPT_ICONS = {
   kids: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5c1 1.3 2.1 2 3.5 2s2.5-.7 3.5-2"/><circle cx="9" cy="10" r=".6" fill="currentColor"/><circle cx="15" cy="10" r=".6" fill="currentColor"/></svg>'
 };
 
+// Department photos live in assets/departments/<slug>/NN.jpg (full size) and t-NN.jpg (thumbnail).
+// cover = which photo shows on the department card; count = number of photos (0 = no gallery page yet).
+const DEPT_SLUG = { music: 'choir', media: 'media', kids: 'kids' };
+const DEPT_MEDIA = { choir: { cover: 4, count: 4 }, kids: { cover: 8, count: 14 }, media: { cover: 0, count: 0 } };
+const DEPT_PAGES = Object.entries(DEPT_MEDIA).filter(([, m]) => m.count > 0)
+  .map(([slug]) => ({ id: 'department', slug: 'departments/' + slug, dept: slug, parent: 'departments' }));
+const pad2 = n => String(n).padStart(2, '0');
+
 const ICONS = {
   Facebook: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8.2h2.8l.5-3.3h-3.3V8.4c0-.9.4-1.7 1.8-1.7H17V3.8c-.3 0-1.3-.2-2.5-.2-2.6 0-4.3 1.6-4.3 4.4v2.5H7.4v3.3h2.8V22z"/></svg>',
   Instagram: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>',
@@ -57,6 +65,7 @@ const FLAGS = {
 const read = f => fs.readFileSync(path.join(__dirname, f), 'utf8');
 const layout = read('src/layout.html');
 const pageSrc = Object.fromEntries(PAGES.map(p => [p.id, read(`src/pages/${p.id}.html`)]));
+pageSrc.department = read('src/pages/department.html');
 
 const dirOf = (lang, page) => (lang === 'en' ? '' : lang + '/') + (page.slug ? page.slug + '/' : '');
 const depthOf = dir => dir.split('/').filter(Boolean).length;
@@ -70,21 +79,23 @@ function fill(tpl, vars, where) {
 
 function build() {
   // clean previous output
-  for (const d of ['de', 'fr', 'about', 'gatherings', 'preachings', 'visit', 'legal']) {
+  for (const d of ['de', 'fr', 'about', 'gatherings', 'preachings', 'visit', 'legal', 'departments', 'give']) {
     fs.rmSync(path.join(__dirname, d), { recursive: true, force: true });
   }
   let count = 0;
   for (const lang of LANGS) {
     const t = require(`./src/i18n/${lang}.js`);
-    for (const page of PAGES) {
+    for (const page of [...PAGES, ...DEPT_PAGES]) {
       const dir = dirOf(lang, page);
+      const deptInfo = page.dept ? t.departments.find(x => DEPT_SLUG[x.icon] === page.dept) : null;
       const root = '../'.repeat(depthOf(dir));
       const href = (l, p) => root + dirOf(l, p) || './';
-      const vars = { ...t, ...LINKS, page: page.id, root, skip: SKIP[lang], pageTitle: t[page.title], pageDesc: t[page.desc] };
+      const vars = { ...t, ...LINKS, page: page.id, root, skip: SKIP[lang], pageTitle: deptInfo ? `${deptInfo.name} – ${t.depGalleryEyebrow} – The Light of God Ministries` : t[page.title], pageDesc: deptInfo ? deptInfo.text : t[page.desc] };
       for (const p of PAGES) {
         vars['h' + p.id[0].toUpperCase() + p.id.slice(1)] = href(lang, p);
         vars['cur_' + p.id] = p.id === page.id ? ' aria-current="page"' : '';
       }
+      if (page.parent) vars['cur_' + page.parent] = ' aria-current="page"';
       vars.langSwitch = LANGS.map(l => {
         const cur = l === lang;
         return `<a href="${href(l, page)}" lang="${l}" hreflang="${l}" title="${FLAGS[l].name}" aria-label="${FLAGS[l].name}"${cur ? ' aria-current="true"' : ''}>${FLAGS[l].svg}</a>`;
@@ -93,13 +104,35 @@ function build() {
       vars.socialPills = SOCIALS.concat([['Google', LINKS.mapsPlace, 'map-link']])
         .map(([n, u, c]) => `<a class="social-link ${c}" href="${u}" target="_blank" rel="noopener">${ICONS[n]} ${n === 'Google' ? 'Google Maps' : n}</a>`).join('\n          ');
       vars.iconInstagram = ICONS.Instagram;
-      vars.deptCards = '<div class="cards">' + t.departments.map(d => `
-          <article class="card dept">
-            <span class="dept-icon">${DEPT_ICONS[d.icon]}</span>
-            <h3>${d.name}</h3>
+      const joinUrl = name => `${LINKS.whatsappUrl}?text=${encodeURIComponent(t.depWaMsg.replace('{name}', name))}`;
+      vars.deptCards = '<div class="cards">' + t.departments.map(d => {
+        const slug = DEPT_SLUG[d.icon], m = DEPT_MEDIA[slug];
+        const hasGallery = m.count > 0;
+        const cover = hasGallery
+          ? `<div class="cover"><img src="${root}assets/departments/${slug}/t-${pad2(m.cover)}.jpg" alt="${d.name}" width="900" height="600" loading="lazy"></div>`
+          : `<div class="cover ph" aria-hidden="true">${DEPT_ICONS[d.icon]}</div>`;
+        const title = hasGallery ? `<a class="stretched" href="${root}${dirOf(lang, { slug: 'departments/' + slug })}">${d.name}</a>` : d.name;
+        const more = hasGallery ? `<p class="dept-more">${t.depViewPhotos} →</p>` : '';
+        return `
+          <article class="card dept${hasGallery ? ' linked' : ''}">
+            ${cover}
+            <h3>${title}</h3>
             <p>${d.text}</p>
-            <a class="btn btn-indigo btn-sm" href="${LINKS.whatsappUrl}?text=${encodeURIComponent(t.depWaMsg.replace('{name}', d.name))}" target="_blank" rel="noopener">${t.depJoin}</a>
-          </article>`).join('') + '\n        </div>';
+            ${more}
+            <a class="btn btn-indigo btn-sm" href="${joinUrl(d.name)}" target="_blank" rel="noopener">${t.depJoin}</a>
+          </article>`;
+      }).join('') + '\n        </div>';
+      if (deptInfo) {
+        const slug = page.dept, m = DEPT_MEDIA[slug];
+        vars.deptName = deptInfo.name;
+        vars.deptText = deptInfo.text;
+        vars.deptJoinUrl = joinUrl(deptInfo.name);
+        vars.galleryGrid = '<ul class="gallery">' + Array.from({ length: m.count }, (_, i) => {
+          const n = i + 1, alt = t.depPhotoAlt.replace('{name}', deptInfo.name).replace('{n}', n);
+          return `
+          <li><a href="${root}assets/departments/${slug}/${pad2(n)}.jpg" data-lightbox data-alt="${alt}"><img src="${root}assets/departments/${slug}/t-${pad2(n)}.jpg" alt="${alt}" width="900" height="600" loading="lazy"></a></li>`;
+        }).join('') + '\n        </ul>';
+      }
       vars.iconYoutubeButton = '<svg class="yt-mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="4.5" width="21" height="15" rx="4.5" fill="#fff"/><path d="M10 9l5.5 3-5.5 3z" fill="#e00000"/></svg>';
       vars.giveBankCard = GIVE.iban ? `<article class="card"><span class="day">${t.giveBankTitle}</span><h3>${GIVE.holder}</h3><dl class="bank"><dt>${t.giveIban}</dt><dd>${GIVE.iban}</dd>${GIVE.bic ? `<dt>${t.giveBic}</dt><dd>${GIVE.bic}</dd>` : ''}${GIVE.reference ? `<dt>${t.giveRef}</dt><dd>${GIVE.reference}</dd>` : ''}</dl></article>` : '';
       vars.giveLinkCard = GIVE.paymentLink ? `<article class="card featured"><span class="day">${t.giveEyebrow}</span><h3>${t.giveH1}</h3><p>${t.giveThanks}</p><a class="btn btn-gold" href="${GIVE.paymentLink}" target="_blank" rel="noopener">${t.giveLinkCta}</a></article>` : '';

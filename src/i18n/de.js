@@ -105,6 +105,9 @@ module.exports = {
     { icon: 'kids', name: 'Kinderteam', text: 'Ein Ort, an dem Kinder auf liebevolle, sichere und fröhliche Weise von Jesus lernen.' }
   ],
 
+  depViewPhotos: 'Fotos ansehen', depBackAll: '← Alle Teams', depGalleryEyebrow: 'Fotogalerie',
+  depPhotoAlt: '{name} – Foto {n}', lbClose: 'Schließen', lbPrev: 'Vorheriges Foto', lbNext: 'Nächstes Foto',
+
   js: {
     days: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
     labels: { sun: 'Gottesdienst', mon: 'Online-Bibelstudium', wed: 'Gebetstreffen' },

@@ -1,0 +1,29 @@
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow"><a class="back" href="{{hDepartments}}">{{depBackAll}}</a></p>
+        <h1>{{deptName}}</h1>
+        <p class="page-lead">{{deptText}}</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <p class="gallery-kicker">{{depGalleryEyebrow}}</p>
+        {{galleryGrid}}
+        <div class="where">
+          <h2>{{depServeTitle}}</h2>
+          <p class="page-lead dark">{{depServeText}}</p>
+          <div class="cta">
+            <a class="btn btn-indigo" href="{{deptJoinUrl}}" target="_blank" rel="noopener">{{depJoin}}</a>
+            <a class="btn btn-outline" href="{{hDepartments}}">{{depBackAll}}</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="{{deptName}}">
+      <button type="button" class="lb-btn lb-close" aria-label="{{lbClose}}">&times;</button>
+      <button type="button" class="lb-btn lb-prev" aria-label="{{lbPrev}}">&#8249;</button>
+      <figure class="lb-figure"><img class="lb-img" alt=""><figcaption class="lb-count" aria-live="polite"></figcaption></figure>
+      <button type="button" class="lb-btn lb-next" aria-label="{{lbNext}}">&#8250;</button>
+    </div>
