@@ -90,6 +90,21 @@ module.exports = {
   giveBankTitle: 'Bank transfer', giveIban: 'IBAN', giveBic: 'BIC', giveRef: 'Reference',
   giveLinkCta: 'Give online', giveThanks: 'Thank you for your generosity.',
 
+  navDepartments: 'Departments',
+  depTitle: 'Departments – The Light of God Ministries',
+  depDesc: 'The departments of The Light of God Ministries in Wiener Neustadt: choir, media and children. Ask how to join and serve.',
+  depEyebrow: 'Serve with us', depH1: 'Our departments',
+  depLead: 'Everyone is invited to serve with their gifts. Find a department and ask how to join.',
+  depJoin: 'Ask about joining',
+  depWaMsg: 'Hello, I would like to know more about: {name}.',
+  depServeTitle: 'Want to serve?',
+  depServeText: 'Call us or message us on WhatsApp and we will help you find the right department.',
+  departments: [
+    { icon: 'music', name: 'Choir', text: 'Leads the church in worship through song and praise.' },
+    { icon: 'media', name: 'Media Department', text: 'Sound, video, photos and social media, so the message reaches beyond the walls of the church.' },
+    { icon: 'kids', name: 'Children’s Department', text: 'A place where children learn about Jesus in a fun, safe and caring way.' }
+  ],
+
   js: {
     days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
     labels: { sun: 'Church Service', mon: 'Online Bible Study', wed: 'Prayer Meeting' },

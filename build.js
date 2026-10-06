@@ -10,6 +10,7 @@ const PAGES = [
   { id: 'gatherings', slug: 'gatherings', title: 'gathTitle', desc: 'gathDesc' },
   { id: 'preachings', slug: 'preachings', title: 'prTitle', desc: 'prDesc' },
   { id: 'visit', slug: 'visit', title: 'visitTitle', desc: 'visitDesc' },
+  { id: 'departments', slug: 'departments', title: 'depTitle', desc: 'depDesc' },
   { id: 'give', slug: 'give', title: 'giveTitle', desc: 'giveDesc' },
   { id: 'legal', slug: 'legal', title: 'legalTitle', desc: 'legalDesc' }
 ];
@@ -27,6 +28,12 @@ const LINKS = {
 // Giving details. Fill these in to show a bank-transfer card and/or an online-giving button on the Give page.
 // While empty, the page shows only the "call or WhatsApp us" card (no details are invented).
 const GIVE = { holder: 'Osaremwanta Obakpolor', iban: 'AT56 2026 7020 1202 5629', bic: 'WINSATWN', reference: '', paymentLink: '' };
+
+const DEPT_ICONS = {
+  music: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>',
+  media: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="13" height="12" rx="2.5"/><path d="M15.5 10.5l6-3.5v10l-6-3.5"/></svg>',
+  kids: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5c1 1.3 2.1 2 3.5 2s2.5-.7 3.5-2"/><circle cx="9" cy="10" r=".6" fill="currentColor"/><circle cx="15" cy="10" r=".6" fill="currentColor"/></svg>'
+};
 
 const ICONS = {
   Facebook: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8.2h2.8l.5-3.3h-3.3V8.4c0-.9.4-1.7 1.8-1.7H17V3.8c-.3 0-1.3-.2-2.5-.2-2.6 0-4.3 1.6-4.3 4.4v2.5H7.4v3.3h2.8V22z"/></svg>',
@@ -86,6 +93,13 @@ function build() {
       vars.socialPills = SOCIALS.concat([['Google', LINKS.mapsPlace, 'map-link']])
         .map(([n, u, c]) => `<a class="social-link ${c}" href="${u}" target="_blank" rel="noopener">${ICONS[n]} ${n === 'Google' ? 'Google Maps' : n}</a>`).join('\n          ');
       vars.iconInstagram = ICONS.Instagram;
+      vars.deptCards = '<div class="cards">' + t.departments.map(d => `
+          <article class="card dept">
+            <span class="dept-icon">${DEPT_ICONS[d.icon]}</span>
+            <h3>${d.name}</h3>
+            <p>${d.text}</p>
+            <a class="btn btn-indigo btn-sm" href="${LINKS.whatsappUrl}?text=${encodeURIComponent(t.depWaMsg.replace('{name}', d.name))}" target="_blank" rel="noopener">${t.depJoin}</a>
+          </article>`).join('') + '\n        </div>';
       vars.iconYoutubeButton = '<svg class="yt-mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="4.5" width="21" height="15" rx="4.5" fill="#fff"/><path d="M10 9l5.5 3-5.5 3z" fill="#e00000"/></svg>';
       vars.giveBankCard = GIVE.iban ? `<article class="card"><span class="day">${t.giveBankTitle}</span><h3>${GIVE.holder}</h3><dl class="bank"><dt>${t.giveIban}</dt><dd>${GIVE.iban}</dd>${GIVE.bic ? `<dt>${t.giveBic}</dt><dd>${GIVE.bic}</dd>` : ''}${GIVE.reference ? `<dt>${t.giveRef}</dt><dd>${GIVE.reference}</dd>` : ''}</dl></article>` : '';
       vars.giveLinkCard = GIVE.paymentLink ? `<article class="card featured"><span class="day">${t.giveEyebrow}</span><h3>${t.giveH1}</h3><p>${t.giveThanks}</p><a class="btn btn-gold" href="${GIVE.paymentLink}" target="_blank" rel="noopener">${t.giveLinkCta}</a></article>` : '';

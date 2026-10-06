@@ -273,3 +273,9 @@ h2.h3:first-child{margin-top:0}
 @media (max-width:860px){
   .hero-shade{background:linear-gradient(180deg,rgba(46,1,69,.9),rgba(46,1,69,.84))}
 }
+
+/* departments */
+.card.dept .btn{align-self:flex-start;margin-top:auto}
+.dept-icon{display:grid;place-items:center;width:54px;height:54px;border-radius:14px;background:rgba(128,29,166,.1);color:var(--indigo-700);margin-bottom:.4rem}
+.dept-icon svg{width:28px;height:28px}
+.page-lead.dark{color:var(--muted);margin:.4rem 0 1.4rem}

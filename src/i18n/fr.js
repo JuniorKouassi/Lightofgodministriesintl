@@ -90,6 +90,21 @@ module.exports = {
   giveBankTitle: 'Virement bancaire', giveIban: 'IBAN', giveBic: 'BIC', giveRef: 'Référence',
   giveLinkCta: 'Donner en ligne', giveThanks: 'Merci pour votre générosité.',
 
+  navDepartments: 'Départements',
+  depTitle: 'Départements – The Light of God Ministries',
+  depDesc: 'Les départements de The Light of God Ministries à Wiener Neustadt : chorale, média et enfants. Demandez comment rejoindre et servir.',
+  depEyebrow: 'Servir avec nous', depH1: 'Nos départements',
+  depLead: 'Chacun est invité à servir avec ses dons. Trouvez un département et demandez comment le rejoindre.',
+  depJoin: 'Demander à rejoindre',
+  depWaMsg: 'Bonjour, je souhaite en savoir plus sur : {name}.',
+  depServeTitle: 'Envie de servir ?',
+  depServeText: 'Appelez-nous ou écrivez-nous sur WhatsApp, nous vous aiderons à trouver le bon département.',
+  departments: [
+    { icon: 'music', name: 'Chorale', text: 'Conduit l’église dans l’adoration par le chant et la louange.' },
+    { icon: 'media', name: 'Département média', text: 'Son, vidéo, photos et réseaux sociaux, pour que le message dépasse les murs de l’église.' },
+    { icon: 'kids', name: 'Département enfants', text: 'Un lieu où les enfants découvrent Jésus de façon joyeuse, sûre et bienveillante.' }
+  ],
+
   js: {
     days: ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'],
     labels: { sun: 'Culte', mon: 'Étude biblique en ligne', wed: 'Réunion de prière' },

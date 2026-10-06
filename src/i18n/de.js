@@ -90,6 +90,21 @@ module.exports = {
   giveBankTitle: 'Banküberweisung', giveIban: 'IBAN', giveBic: 'BIC', giveRef: 'Verwendungszweck',
   giveLinkCta: 'Online spenden', giveThanks: 'Vielen Dank für Ihre Großzügigkeit.',
 
+  navDepartments: 'Teams',
+  depTitle: 'Teams – The Light of God Ministries',
+  depDesc: 'Die Teams von The Light of God Ministries in Wiener Neustadt: Chor, Medien und Kinder. Fragen Sie, wie Sie mitmachen können.',
+  depEyebrow: 'Mitmachen', depH1: 'Unsere Teams',
+  depLead: 'Jeder ist eingeladen, mit seinen Gaben zu dienen. Finden Sie ein Team und fragen Sie, wie Sie dazukommen.',
+  depJoin: 'Mitmachen anfragen',
+  depWaMsg: 'Hallo, ich interessiere mich für: {name}.',
+  depServeTitle: 'Möchten Sie mitarbeiten?',
+  depServeText: 'Rufen Sie uns an oder schreiben Sie per WhatsApp – wir helfen Ihnen, das passende Team zu finden.',
+  departments: [
+    { icon: 'music', name: 'Chor', text: 'Führt die Gemeinde im Lobpreis durch Gesang und Anbetung.' },
+    { icon: 'media', name: 'Medienteam', text: 'Ton, Video, Fotos und soziale Medien – damit die Botschaft auch über die Gemeinderäume hinaus ankommt.' },
+    { icon: 'kids', name: 'Kinderteam', text: 'Ein Ort, an dem Kinder auf liebevolle, sichere und fröhliche Weise von Jesus lernen.' }
+  ],
+
   js: {
     days: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
     labels: { sun: 'Gottesdienst', mon: 'Online-Bibelstudium', wed: 'Gebetstreffen' },
