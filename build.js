@@ -38,7 +38,7 @@ const DEPT_ICONS = {
 // Department photos live in assets/departments/<slug>/NN.jpg (full size) and t-NN.jpg (thumbnail).
 // cover = which photo shows on the department card; count = number of photos (0 = no gallery page yet).
 const DEPT_SLUG = { music: 'choir', media: 'media', kids: 'kids' };
-const DEPT_MEDIA = { choir: { cover: 4, count: 4 }, kids: { cover: 8, count: 14 }, media: { cover: 0, count: 0 } };
+const DEPT_MEDIA = { choir: { cover: 4, count: 4 }, kids: { cover: 8, count: 14 }, media: { cover: 1, count: 0 } };
 const DEPT_PAGES = Object.entries(DEPT_MEDIA).filter(([, m]) => m.count > 0)
   .map(([slug]) => ({ id: 'department', slug: 'departments/' + slug, dept: slug, parent: 'departments' }));
 const pad2 = n => String(n).padStart(2, '0');
@@ -108,7 +108,7 @@ function build() {
       vars.deptCards = '<div class="cards">' + t.departments.map(d => {
         const slug = DEPT_SLUG[d.icon], m = DEPT_MEDIA[slug];
         const hasGallery = m.count > 0;
-        const cover = hasGallery
+        const cover = m.cover > 0
           ? `<div class="cover"><img src="${root}assets/departments/${slug}/t-${pad2(m.cover)}.jpg" alt="${d.name}" width="900" height="600" loading="lazy"></div>`
           : `<div class="cover ph" aria-hidden="true">${DEPT_ICONS[d.icon]}</div>`;
         const title = hasGallery ? `<a class="stretched" href="${root}${dirOf(lang, { slug: 'departments/' + slug })}">${d.name}</a>` : d.name;
