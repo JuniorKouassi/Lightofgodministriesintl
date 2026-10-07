@@ -145,6 +145,102 @@
     }, { passive: true });
   }
 
+  // Offerings flow: gift type -> amount -> pay
+  var gf = document.getElementById('giveFlow');
+  if (gf) {
+    var cfg = JSON.parse(gf.getAttribute('data-cfg'));
+    gf.classList.add('js');
+    var panels = gf.querySelectorAll('.gf-panel');
+    var stepLis = gf.querySelectorAll('.gf-steps li');
+    var state = { type: null, amount: null };
+    var cur = 1;
+    var lang = document.documentElement.lang || 'en';
+    var fmt = function (n) {
+      try { return new Intl.NumberFormat(lang, { style: 'currency', currency: cfg.currency }).format(n); } catch (e) { return n + ' ' + cfg.currency; }
+    };
+    var go = function (n) {
+      cur = n;
+      panels.forEach(function (p) { p.hidden = Number(p.getAttribute('data-step')) !== n; });
+      stepLis.forEach(function (li) {
+        var s = Number(li.getAttribute('data-s'));
+        li.classList.toggle('on', s === n); li.classList.toggle('done', s < n);
+      });
+      var h = gf.querySelector('.gf-panel[data-step="' + n + '"] h3');
+      if (h) h.focus({ preventScroll: true });
+      gf.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    };
+    var err = function (n, msg) { gf.querySelector('.gf-panel[data-step="' + n + '"] .gf-err').textContent = msg || ''; };
+    var customWrap = gf.querySelector('.gf-custom');
+    var customIn = document.getElementById('gf-custom');
+    gf.querySelectorAll('input[name="gf-amt"]').forEach(function (r) {
+      r.addEventListener('change', function () {
+        var other = r.value === 'other' && r.checked;
+        customWrap.hidden = !other;
+        if (other) customIn.focus();
+        err(2, '');
+      });
+    });
+    gf.querySelectorAll('input[name="gf-type"]').forEach(function (r) { r.addEventListener('change', function () { err(1, ''); }); });
+
+    var readAmount = function () {
+      var sel = gf.querySelector('input[name="gf-amt"]:checked');
+      if (!sel) return null;
+      var v = sel.value === 'other' ? parseFloat(String(customIn.value).replace(',', '.')) : parseFloat(sel.value);
+      if (!isFinite(v) || v < 1) return null;
+      return Math.round(v * 100) / 100;
+    };
+    var setMethod = function (el, href) {
+      if (href) { el.setAttribute('href', href); el.removeAttribute('aria-disabled'); }
+      else { el.removeAttribute('href'); el.setAttribute('aria-disabled', 'true'); }
+    };
+    var prepareStep3 = function () {
+      document.getElementById('gf-sum').textContent = cfg.names[state.type] + ' · ' + fmt(state.amount);
+      var stripeUrl = cfg.stripe[state.type] || '';
+      setMethod(gf.querySelector('[data-m="card"]'), stripeUrl);
+      document.getElementById('gf-stripe-note').hidden = !stripeUrl;
+      var pp = cfg.paypalMe ? 'https://www.paypal.me/' + encodeURIComponent(cfg.paypalMe) + '/' + state.amount + cfg.currency : '';
+      setMethod(gf.querySelector('[data-m="paypal"]'), pp);
+      document.getElementById('gf-holder').textContent = cfg.bank.holder;
+      document.getElementById('gf-iban').textContent = cfg.bank.iban;
+      document.getElementById('gf-bic').textContent = cfg.bank.bic;
+      document.getElementById('gf-ref').textContent = cfg.names[state.type];
+    };
+    gf.addEventListener('click', function (e) {
+      var b = e.target.closest('button, a');
+      if (!b || !gf.contains(b)) return;
+      if (b.hasAttribute('data-back')) { go(cur - 1); return; }
+      if (b.hasAttribute('data-next')) {
+        if (cur === 1) {
+          var t = gf.querySelector('input[name="gf-type"]:checked');
+          if (!t) { err(1, gf.getAttribute('data-err-type')); return; }
+          state.type = t.value; go(2);
+        } else if (cur === 2) {
+          var a = readAmount();
+          if (a === null) { err(2, gf.getAttribute('data-err-amount')); return; }
+          state.amount = a; prepareStep3(); go(3);
+        }
+        return;
+      }
+      if (b.getAttribute('data-m') === 'bank') {
+        var box = document.getElementById('gf-bank');
+        var open = box.hidden;
+        box.hidden = !open; b.setAttribute('aria-expanded', String(open));
+        return;
+      }
+      if (b.classList.contains('gf-copy')) {
+        var txt = document.getElementById(b.getAttribute('data-copy-target')).textContent;
+        var done = function () {
+          var old = b.textContent; b.textContent = gf.getAttribute('data-copied');
+          setTimeout(function () { b.textContent = old; }, 1500);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, function () {});
+        return;
+      }
+      if (b.tagName === 'A' && b.getAttribute('aria-disabled') === 'true') e.preventDefault();
+    });
+    customIn.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); gf.querySelector('.gf-panel[data-step="2"] [data-next]').click(); } });
+  }
+
   // Scroll reveal
   var items = document.querySelectorAll('.card, .about-grid > *, .visit-grid > *, .leader-grid > *, .watch .wrap > *, .social-link');
   items.forEach(function (i) { i.classList.add('reveal'); });

@@ -85,7 +85,7 @@ module.exports = {
   giveLead: 'Give freely and joyfully. Your free-will gift supports the ministry in Wiener Neustadt.',
   giveVerse: 'Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver.',
   giveVerseRef: '2 Corinthians 9:7',
-  giveHowTitle: 'How to give',
+  giveHowTitle: 'Other ways to give',
   giveContactText: 'To give, call or message us on WhatsApp and we will send you the details.',
   giveBankTitle: 'Bank transfer', giveIban: 'IBAN', giveBic: 'BIC', giveRef: 'Reference',
   giveLinkCta: 'Give online', giveThanks: 'Thank you for your generosity.',
@@ -107,6 +107,22 @@ module.exports = {
 
   depViewPhotos: 'View photos', depBackAll: '← All departments', depGalleryEyebrow: 'Photo gallery',
   depPhotoAlt: '{name} – photo {n}', lbClose: 'Close', lbPrev: 'Previous photo', lbNext: 'Next photo',
+
+  giftTypes: [
+    { id: 'ordinary', name: 'Ordinary offerings', text: 'Your regular free-will offering for the work of the church.' },
+    { id: 'tithes', name: 'Tithes', text: 'Your tithe, given back to God with thanks.' },
+    { id: 'samaritan', name: 'Samaritan Box', text: 'Gifts to help people in need.' }
+  ],
+  gfTitle: 'Give in three steps', gfS1: 'Gift', gfS2: 'Amount', gfS3: 'Pay',
+  gfChooseType: 'What would you like to give?', gfChooseAmount: 'Choose an amount', gfOther: 'Other', gfAmountLabel: 'Your amount in euros',
+  gfNext: 'Continue', gfBack: 'Back', gfPayWith: 'How would you like to pay?',
+  gfCard: 'Card (Stripe)', gfPaypal: 'PayPal', gfBank: 'Bank transfer', gfSoon: 'Available soon',
+  gfSummary: 'Your gift', gfCopy: 'Copy', gfCopied: 'Copied',
+  gfBankIntro: 'Transfer the amount to this account and use the reference below.',
+  gfHolder: 'Account holder', gfStripeNote: 'You will confirm the amount on the secure Stripe page.',
+  gfSecure: 'Cards and PayPal are processed on the provider’s own secure page. We never see your card details.',
+  gfErrType: 'Please choose a gift.', gfErrAmount: 'Please enter an amount of at least 1 euro.',
+  legalPay: 'If you give by card or PayPal, you are sent to Stripe or PayPal, which process your payment data under their own privacy policies. We do not receive your card details.',
 
   js: {
     days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],

@@ -85,7 +85,7 @@ module.exports = {
   giveLead: 'Geben Sie frei und mit Freude. Ihre freiwillige Gabe unterstützt den Dienst in Wiener Neustadt.',
   giveVerse: 'Ein jeder, wie er’s sich im Herzen vorgenommen hat, nicht mit Unwillen oder aus Zwang; denn einen fröhlichen Geber hat Gott lieb.',
   giveVerseRef: '2. Korinther 9,7',
-  giveHowTitle: 'So können Sie geben',
+  giveHowTitle: 'Weitere Möglichkeiten zu geben',
   giveContactText: 'Rufen Sie uns an oder schreiben Sie uns per WhatsApp – wir senden Ihnen die Angaben.',
   giveBankTitle: 'Banküberweisung', giveIban: 'IBAN', giveBic: 'BIC', giveRef: 'Verwendungszweck',
   giveLinkCta: 'Online spenden', giveThanks: 'Vielen Dank für Ihre Großzügigkeit.',
@@ -107,6 +107,22 @@ module.exports = {
 
   depViewPhotos: 'Fotos ansehen', depBackAll: '← Alle Teams', depGalleryEyebrow: 'Fotogalerie',
   depPhotoAlt: '{name} – Foto {n}', lbClose: 'Schließen', lbPrev: 'Vorheriges Foto', lbNext: 'Nächstes Foto',
+
+  giftTypes: [
+    { id: 'ordinary', name: 'Allgemeine Gaben', text: 'Ihre reguläre freiwillige Gabe für die Arbeit der Gemeinde.' },
+    { id: 'tithes', name: 'Zehnten', text: 'Ihr Zehnter, mit Dank an Gott zurückgegeben.' },
+    { id: 'samaritan', name: 'Samariter-Box', text: 'Gaben, um Menschen in Not zu helfen.' }
+  ],
+  gfTitle: 'Geben in drei Schritten', gfS1: 'Gabe', gfS2: 'Betrag', gfS3: 'Zahlen',
+  gfChooseType: 'Was möchten Sie geben?', gfChooseAmount: 'Betrag wählen', gfOther: 'Anderer', gfAmountLabel: 'Ihr Betrag in Euro',
+  gfNext: 'Weiter', gfBack: 'Zurück', gfPayWith: 'Wie möchten Sie zahlen?',
+  gfCard: 'Karte (Stripe)', gfPaypal: 'PayPal', gfBank: 'Banküberweisung', gfSoon: 'Bald verfügbar',
+  gfSummary: 'Ihre Gabe', gfCopy: 'Kopieren', gfCopied: 'Kopiert',
+  gfBankIntro: 'Überweisen Sie den Betrag auf dieses Konto und verwenden Sie den Verwendungszweck unten.',
+  gfHolder: 'Kontoinhaber', gfStripeNote: 'Den Betrag bestätigen Sie auf der sicheren Stripe-Seite.',
+  gfSecure: 'Karten- und PayPal-Zahlungen werden auf der sicheren Seite des Anbieters abgewickelt. Wir sehen Ihre Kartendaten nie.',
+  gfErrType: 'Bitte wählen Sie eine Gabe.', gfErrAmount: 'Bitte geben Sie einen Betrag von mindestens 1 Euro ein.',
+  legalPay: 'Wenn Sie per Karte oder PayPal geben, werden Sie zu Stripe oder PayPal weitergeleitet, die Ihre Zahlungsdaten nach ihren eigenen Datenschutzbestimmungen verarbeiten. Wir erhalten Ihre Kartendaten nicht.',
 
   js: {
     days: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],

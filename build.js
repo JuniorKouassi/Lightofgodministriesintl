@@ -43,6 +43,13 @@ const DEPT_PAGES = Object.entries(DEPT_MEDIA).filter(([, m]) => m.count > 0)
   .map(([slug]) => ({ id: 'department', slug: 'departments/' + slug, dept: slug, parent: 'departments' }));
 const pad2 = n => String(n).padStart(2, '0');
 
+// Online payment links. Leave empty until the accounts exist: the buttons then show "Available soon".
+// stripe = one Stripe Payment Link per gift type (the donor confirms the amount on Stripe's page).
+// paypalMe = the PayPal.Me username; the chosen amount is added to the link automatically.
+const PAY = { currency: 'EUR', presets: [10, 20, 50, 100], stripe: { ordinary: '', tithes: '', samaritan: '' }, paypalMe: '' };
+const PAY_ON = !!(PAY.paypalMe || Object.values(PAY.stripe).some(Boolean));
+const attrEsc = s => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+
 const ICONS = {
   Facebook: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8.2h2.8l.5-3.3h-3.3V8.4c0-.9.4-1.7 1.8-1.7H17V3.8c-.3 0-1.3-.2-2.5-.2-2.6 0-4.3 1.6-4.3 4.4v2.5H7.4v3.3h2.8V22z"/></svg>',
   Instagram: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>',
@@ -137,6 +144,55 @@ function build() {
       vars.giveBankCard = GIVE.iban ? `<article class="card"><span class="day">${t.giveBankTitle}</span><h3>${GIVE.holder}</h3><dl class="bank"><dt>${t.giveIban}</dt><dd>${GIVE.iban}</dd>${GIVE.bic ? `<dt>${t.giveBic}</dt><dd>${GIVE.bic}</dd>` : ''}${GIVE.reference ? `<dt>${t.giveRef}</dt><dd>${GIVE.reference}</dd>` : ''}</dl></article>` : '';
       vars.giveLinkCard = GIVE.paymentLink ? `<article class="card featured"><span class="day">${t.giveEyebrow}</span><h3>${t.giveH1}</h3><p>${t.giveThanks}</p><a class="btn btn-gold" href="${GIVE.paymentLink}" target="_blank" rel="noopener">${t.giveLinkCta}</a></article>` : '';
       vars.iconTiktok = ICONS.TikTok;
+      {
+        const eur = n => (lang === 'en' ? '€' + n : n + ' €');
+        const cfg = { currency: PAY.currency, stripe: PAY.stripe, paypalMe: PAY.paypalMe,
+          bank: { holder: GIVE.holder, iban: GIVE.iban, bic: GIVE.bic },
+          names: Object.fromEntries(t.giftTypes.map(g => [g.id, g.name])) };
+        const types = t.giftTypes.map((g, i) => `
+            <label class="gf-opt"><input type="radio" name="gf-type" value="${g.id}"><span class="gf-opt-body"><strong>${g.name}</strong><small>${g.text}</small></span></label>`).join('');
+        const chips = PAY.presets.map(n => `
+            <label class="gf-chip"><input type="radio" name="gf-amt" value="${n}"><span>${eur(n)}</span></label>`).join('');
+        const bank = GIVE.iban ? `
+            <button type="button" class="gf-method" data-m="bank" aria-expanded="false" aria-controls="gf-bank"><span class="gf-m-name">${t.gfBank}</span></button>` : '';
+        vars.giveFlow = `<div class="gf" id="giveFlow" data-cfg="${attrEsc(JSON.stringify(cfg))}" data-err-type="${attrEsc(t.gfErrType)}" data-err-amount="${attrEsc(t.gfErrAmount)}" data-copied="${attrEsc(t.gfCopied)}" data-copy="${attrEsc(t.gfCopy)}" data-stripe-note="${attrEsc(t.gfStripeNote)}">
+          <ol class="gf-steps" aria-hidden="true"><li data-s="1"><b>1</b> ${t.gfS1}</li><li data-s="2"><b>2</b> ${t.gfS2}</li><li data-s="3"><b>3</b> ${t.gfS3}</li></ol>
+          <div class="gf-panel" data-step="1">
+            <fieldset class="gf-fs"><legend><h3 tabindex="-1">${t.gfChooseType}</h3></legend><div class="gf-opts">${types}
+            </div></fieldset>
+            <p class="gf-err" role="alert"></p>
+            <div class="gf-nav"><button type="button" class="btn btn-indigo" data-next>${t.gfNext}</button></div>
+          </div>
+          <div class="gf-panel" data-step="2" hidden>
+            <fieldset class="gf-fs"><legend><h3 tabindex="-1">${t.gfChooseAmount}</h3></legend><div class="gf-chips">${chips}
+            <label class="gf-chip"><input type="radio" name="gf-amt" value="other"><span>${t.gfOther}</span></label></div>
+            <label class="gf-custom" hidden><span>${t.gfAmountLabel}</span><input type="number" id="gf-custom" min="1" step="any" inputmode="decimal" placeholder="0"></label></fieldset>
+            <p class="gf-err" role="alert"></p>
+            <div class="gf-nav"><button type="button" class="btn btn-outline" data-back>${t.gfBack}</button><button type="button" class="btn btn-indigo" data-next>${t.gfNext}</button></div>
+          </div>
+          <div class="gf-panel" data-step="3" hidden>
+            <h3 tabindex="-1">${t.gfPayWith}</h3>
+            <p class="gf-sum"><span>${t.gfSummary}:</span> <strong id="gf-sum"></strong></p>
+            <div class="gf-methods">
+              <a class="gf-method" data-m="card" target="_blank" rel="noopener"><span class="gf-m-name">${t.gfCard}</span><span class="gf-soon">${t.gfSoon}</span></a>
+              <a class="gf-method" data-m="paypal" target="_blank" rel="noopener"><span class="gf-m-name">${t.gfPaypal}</span><span class="gf-soon">${t.gfSoon}</span></a>${bank}
+            </div>
+            <p class="gf-note" id="gf-stripe-note" hidden>${t.gfStripeNote}</p>
+            <div class="gf-bank" id="gf-bank" hidden>
+              <p>${t.gfBankIntro}</p>
+              <dl class="bank">
+                <dt>${t.gfHolder}</dt><dd id="gf-holder"></dd>
+                <dt>${t.giveIban}</dt><dd><span id="gf-iban"></span> <button type="button" class="gf-copy" data-copy-target="gf-iban">${t.gfCopy}</button></dd>
+                <dt>${t.giveBic}</dt><dd id="gf-bic"></dd>
+                <dt>${t.giveRef}</dt><dd><span id="gf-ref"></span> <button type="button" class="gf-copy" data-copy-target="gf-ref">${t.gfCopy}</button></dd>
+              </dl>
+            </div>
+            <p class="gf-note">${t.gfSecure}</p>
+            <div class="gf-nav"><button type="button" class="btn btn-outline" data-back>${t.gfBack}</button></div>
+          </div>
+        </div>`;
+        if (PAY_ON) vars.legalBody = t.legalBody.replace(/<\/ul>\s*$/, '<li>' + t.legalPay + '</li></ul>');
+      }
       vars.i18nJson = JSON.stringify(t.js).replace(/</g, '\\u003c');
 
       const svc = [

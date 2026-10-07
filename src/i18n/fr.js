@@ -85,7 +85,7 @@ module.exports = {
   giveLead: 'Donnez librement et avec joie. Votre don libre soutient le ministère à Wiener Neustadt.',
   giveVerse: 'Que chacun donne comme il l’a résolu en son cœur, sans tristesse ni contrainte ; car Dieu aime celui qui donne avec joie.',
   giveVerseRef: '2 Corinthiens 9:7',
-  giveHowTitle: 'Comment donner',
+  giveHowTitle: 'Autres façons de donner',
   giveContactText: 'Pour donner, appelez-nous ou écrivez-nous sur WhatsApp et nous vous enverrons les coordonnées.',
   giveBankTitle: 'Virement bancaire', giveIban: 'IBAN', giveBic: 'BIC', giveRef: 'Référence',
   giveLinkCta: 'Donner en ligne', giveThanks: 'Merci pour votre générosité.',
@@ -107,6 +107,22 @@ module.exports = {
 
   depViewPhotos: 'Voir les photos', depBackAll: '← Tous les départements', depGalleryEyebrow: 'Galerie photo',
   depPhotoAlt: '{name} – photo {n}', lbClose: 'Fermer', lbPrev: 'Photo précédente', lbNext: 'Photo suivante',
+
+  giftTypes: [
+    { id: 'ordinary', name: 'Offrandes ordinaires', text: 'Votre offrande libre habituelle pour l’œuvre de l’église.' },
+    { id: 'tithes', name: 'Dîmes', text: 'Votre dîme, rendue à Dieu avec reconnaissance.' },
+    { id: 'samaritan', name: 'Boîte du Samaritain', text: 'Dons pour aider les personnes dans le besoin.' }
+  ],
+  gfTitle: 'Donner en trois étapes', gfS1: 'Don', gfS2: 'Montant', gfS3: 'Payer',
+  gfChooseType: 'Que souhaitez-vous donner ?', gfChooseAmount: 'Choisissez un montant', gfOther: 'Autre', gfAmountLabel: 'Votre montant en euros',
+  gfNext: 'Continuer', gfBack: 'Retour', gfPayWith: 'Comment souhaitez-vous payer ?',
+  gfCard: 'Carte (Stripe)', gfPaypal: 'PayPal', gfBank: 'Virement bancaire', gfSoon: 'Bientôt disponible',
+  gfSummary: 'Votre don', gfCopy: 'Copier', gfCopied: 'Copié',
+  gfBankIntro: 'Virez le montant sur ce compte et utilisez la référence ci-dessous.',
+  gfHolder: 'Titulaire du compte', gfStripeNote: 'Vous confirmerez le montant sur la page sécurisée de Stripe.',
+  gfSecure: 'Les paiements par carte et PayPal sont traités sur la page sécurisée du prestataire. Nous ne voyons jamais vos données de carte.',
+  gfErrType: 'Veuillez choisir un don.', gfErrAmount: 'Veuillez saisir un montant d’au moins 1 euro.',
+  legalPay: 'Si vous donnez par carte ou PayPal, vous êtes redirigé vers Stripe ou PayPal, qui traitent vos données de paiement selon leur propre politique de confidentialité. Nous ne recevons pas vos données de carte.',
 
   js: {
     days: ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'],

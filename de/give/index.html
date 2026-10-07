@@ -50,9 +50,60 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="flow">
       <div class="wrap">
-        <h2>So können Sie geben</h2>
+        <h2>Geben in drei Schritten</h2>
+        <noscript><style>.gf{display:none}</style></noscript>
+        <div class="gf" id="giveFlow" data-cfg="{&quot;currency&quot;:&quot;EUR&quot;,&quot;stripe&quot;:{&quot;ordinary&quot;:&quot;&quot;,&quot;tithes&quot;:&quot;&quot;,&quot;samaritan&quot;:&quot;&quot;},&quot;paypalMe&quot;:&quot;&quot;,&quot;bank&quot;:{&quot;holder&quot;:&quot;Osaremwanta Obakpolor&quot;,&quot;iban&quot;:&quot;AT56 2026 7020 1202 5629&quot;,&quot;bic&quot;:&quot;WINSATWN&quot;},&quot;names&quot;:{&quot;ordinary&quot;:&quot;Allgemeine Gaben&quot;,&quot;tithes&quot;:&quot;Zehnten&quot;,&quot;samaritan&quot;:&quot;Samariter-Box&quot;}}" data-err-type="Bitte wählen Sie eine Gabe." data-err-amount="Bitte geben Sie einen Betrag von mindestens 1 Euro ein." data-copied="Kopiert" data-copy="Kopieren" data-stripe-note="Den Betrag bestätigen Sie auf der sicheren Stripe-Seite.">
+          <ol class="gf-steps" aria-hidden="true"><li data-s="1"><b>1</b> Gabe</li><li data-s="2"><b>2</b> Betrag</li><li data-s="3"><b>3</b> Zahlen</li></ol>
+          <div class="gf-panel" data-step="1">
+            <fieldset class="gf-fs"><legend><h3 tabindex="-1">Was möchten Sie geben?</h3></legend><div class="gf-opts">
+            <label class="gf-opt"><input type="radio" name="gf-type" value="ordinary"><span class="gf-opt-body"><strong>Allgemeine Gaben</strong><small>Ihre reguläre freiwillige Gabe für die Arbeit der Gemeinde.</small></span></label>
+            <label class="gf-opt"><input type="radio" name="gf-type" value="tithes"><span class="gf-opt-body"><strong>Zehnten</strong><small>Ihr Zehnter, mit Dank an Gott zurückgegeben.</small></span></label>
+            <label class="gf-opt"><input type="radio" name="gf-type" value="samaritan"><span class="gf-opt-body"><strong>Samariter-Box</strong><small>Gaben, um Menschen in Not zu helfen.</small></span></label>
+            </div></fieldset>
+            <p class="gf-err" role="alert"></p>
+            <div class="gf-nav"><button type="button" class="btn btn-indigo" data-next>Weiter</button></div>
+          </div>
+          <div class="gf-panel" data-step="2" hidden>
+            <fieldset class="gf-fs"><legend><h3 tabindex="-1">Betrag wählen</h3></legend><div class="gf-chips">
+            <label class="gf-chip"><input type="radio" name="gf-amt" value="10"><span>10 €</span></label>
+            <label class="gf-chip"><input type="radio" name="gf-amt" value="20"><span>20 €</span></label>
+            <label class="gf-chip"><input type="radio" name="gf-amt" value="50"><span>50 €</span></label>
+            <label class="gf-chip"><input type="radio" name="gf-amt" value="100"><span>100 €</span></label>
+            <label class="gf-chip"><input type="radio" name="gf-amt" value="other"><span>Anderer</span></label></div>
+            <label class="gf-custom" hidden><span>Ihr Betrag in Euro</span><input type="number" id="gf-custom" min="1" step="any" inputmode="decimal" placeholder="0"></label></fieldset>
+            <p class="gf-err" role="alert"></p>
+            <div class="gf-nav"><button type="button" class="btn btn-outline" data-back>Zurück</button><button type="button" class="btn btn-indigo" data-next>Weiter</button></div>
+          </div>
+          <div class="gf-panel" data-step="3" hidden>
+            <h3 tabindex="-1">Wie möchten Sie zahlen?</h3>
+            <p class="gf-sum"><span>Ihre Gabe:</span> <strong id="gf-sum"></strong></p>
+            <div class="gf-methods">
+              <a class="gf-method" data-m="card" target="_blank" rel="noopener"><span class="gf-m-name">Karte (Stripe)</span><span class="gf-soon">Bald verfügbar</span></a>
+              <a class="gf-method" data-m="paypal" target="_blank" rel="noopener"><span class="gf-m-name">PayPal</span><span class="gf-soon">Bald verfügbar</span></a>
+            <button type="button" class="gf-method" data-m="bank" aria-expanded="false" aria-controls="gf-bank"><span class="gf-m-name">Banküberweisung</span></button>
+            </div>
+            <p class="gf-note" id="gf-stripe-note" hidden>Den Betrag bestätigen Sie auf der sicheren Stripe-Seite.</p>
+            <div class="gf-bank" id="gf-bank" hidden>
+              <p>Überweisen Sie den Betrag auf dieses Konto und verwenden Sie den Verwendungszweck unten.</p>
+              <dl class="bank">
+                <dt>Kontoinhaber</dt><dd id="gf-holder"></dd>
+                <dt>IBAN</dt><dd><span id="gf-iban"></span> <button type="button" class="gf-copy" data-copy-target="gf-iban">Kopieren</button></dd>
+                <dt>BIC</dt><dd id="gf-bic"></dd>
+                <dt>Verwendungszweck</dt><dd><span id="gf-ref"></span> <button type="button" class="gf-copy" data-copy-target="gf-ref">Kopieren</button></dd>
+              </dl>
+            </div>
+            <p class="gf-note">Karten- und PayPal-Zahlungen werden auf der sicheren Seite des Anbieters abgewickelt. Wir sehen Ihre Kartendaten nie.</p>
+            <div class="gf-nav"><button type="button" class="btn btn-outline" data-back>Zurück</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <h2>Weitere Möglichkeiten zu geben</h2>
         <div class="cards two">
           
           <article class="card"><span class="day">Banküberweisung</span><h3>Osaremwanta Obakpolor</h3><dl class="bank"><dt>IBAN</dt><dd>AT56 2026 7020 1202 5629</dd><dt>BIC</dt><dd>WINSATWN</dd></dl></article>
