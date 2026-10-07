@@ -116,7 +116,7 @@ module.exports = {
   gfTitle: 'Donner en trois étapes', gfS1: 'Don', gfS2: 'Montant', gfS3: 'Payer',
   gfChooseType: 'Que souhaitez-vous donner ?', gfChooseAmount: 'Choisissez un montant', gfOther: 'Autre', gfAmountLabel: 'Votre montant en euros',
   gfNext: 'Continuer', gfBack: 'Retour', gfPayWith: 'Comment souhaitez-vous payer ?',
-  gfCard: 'Carte (Stripe)', gfPaypal: 'PayPal', gfBank: 'Virement bancaire', gfSoon: 'Bientôt disponible',
+  gfCard: 'Carte bancaire', gfCardSub: 'Visa, Mastercard et autres', gfPaypal: 'PayPal', gfBank: 'Virement bancaire (IBAN)', gfSoon: 'Bientôt disponible',
   gfSummary: 'Votre don', gfCopy: 'Copier', gfCopied: 'Copié',
   gfBankIntro: 'Virez le montant sur ce compte et utilisez la référence ci-dessous.',
   gfHolder: 'Titulaire du compte', gfStripeNote: 'Vous confirmerez le montant sur la page sécurisée de Stripe.',

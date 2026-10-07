@@ -116,7 +116,7 @@ module.exports = {
   gfTitle: 'Give in three steps', gfS1: 'Gift', gfS2: 'Amount', gfS3: 'Pay',
   gfChooseType: 'What would you like to give?', gfChooseAmount: 'Choose an amount', gfOther: 'Other', gfAmountLabel: 'Your amount in euros',
   gfNext: 'Continue', gfBack: 'Back', gfPayWith: 'How would you like to pay?',
-  gfCard: 'Card (Stripe)', gfPaypal: 'PayPal', gfBank: 'Bank transfer', gfSoon: 'Available soon',
+  gfCard: 'Credit or debit card', gfCardSub: 'Visa, Mastercard and more', gfPaypal: 'PayPal', gfBank: 'Bank transfer (IBAN)', gfSoon: 'Available soon',
   gfSummary: 'Your gift', gfCopy: 'Copy', gfCopied: 'Copied',
   gfBankIntro: 'Transfer the amount to this account and use the reference below.',
   gfHolder: 'Account holder', gfStripeNote: 'You will confirm the amount on the secure Stripe page.',

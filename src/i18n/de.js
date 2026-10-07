@@ -116,7 +116,7 @@ module.exports = {
   gfTitle: 'Geben in drei Schritten', gfS1: 'Gabe', gfS2: 'Betrag', gfS3: 'Zahlen',
   gfChooseType: 'Was möchten Sie geben?', gfChooseAmount: 'Betrag wählen', gfOther: 'Anderer', gfAmountLabel: 'Ihr Betrag in Euro',
   gfNext: 'Weiter', gfBack: 'Zurück', gfPayWith: 'Wie möchten Sie zahlen?',
-  gfCard: 'Karte (Stripe)', gfPaypal: 'PayPal', gfBank: 'Banküberweisung', gfSoon: 'Bald verfügbar',
+  gfCard: 'Kredit- oder Debitkarte', gfCardSub: 'Visa, Mastercard und mehr', gfPaypal: 'PayPal', gfBank: 'Banküberweisung (IBAN)', gfSoon: 'Bald verfügbar',
   gfSummary: 'Ihre Gabe', gfCopy: 'Kopieren', gfCopied: 'Kopiert',
   gfBankIntro: 'Überweisen Sie den Betrag auf dieses Konto und verwenden Sie den Verwendungszweck unten.',
   gfHolder: 'Kontoinhaber', gfStripeNote: 'Den Betrag bestätigen Sie auf der sicheren Stripe-Seite.',

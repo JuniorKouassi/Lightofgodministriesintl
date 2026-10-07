@@ -174,7 +174,7 @@ function build() {
             <h3 tabindex="-1">${t.gfPayWith}</h3>
             <p class="gf-sum"><span>${t.gfSummary}:</span> <strong id="gf-sum"></strong></p>
             <div class="gf-methods">
-              <a class="gf-method" data-m="card" target="_blank" rel="noopener"><span class="gf-m-name">${t.gfCard}</span><span class="gf-soon">${t.gfSoon}</span></a>
+              <a class="gf-method" data-m="card" target="_blank" rel="noopener"><span class="gf-m-name">${t.gfCard}<small>${t.gfCardSub}</small></span><span class="gf-soon">${t.gfSoon}</span></a>
               <a class="gf-method" data-m="paypal" target="_blank" rel="noopener"><span class="gf-m-name">${t.gfPaypal}</span><span class="gf-soon">${t.gfSoon}</span></a>${bank}
             </div>
             <p class="gf-note" id="gf-stripe-note" hidden>${t.gfStripeNote}</p>
