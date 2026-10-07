@@ -78,10 +78,10 @@ module.exports = {
 <li>Ihre Rechte nach der DSGVO: Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch. Kontaktieren Sie uns telefonisch. Sie können sich außerdem bei der Österreichischen Datenschutzbehörde beschweren (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener">dsb.gv.at</a>).</li>
 </ul>`,
 
-  navGive: 'Spenden',
-  giveTitle: 'Spenden – freiwillige Gabe | The Light of God Ministries',
+  navGive: 'Gaben',
+  giveTitle: 'Gaben – freiwillige Gabe | The Light of God Ministries',
   giveDesc: 'Unterstützen Sie die Arbeit von The Light of God Ministries Intl in Wiener Neustadt mit einer freiwilligen Gabe.',
-  giveEyebrow: 'Freiwillige Gabe', giveH1: 'Spenden',
+  giveEyebrow: 'Freiwillige Gabe', giveH1: 'Gaben',
   giveLead: 'Geben Sie frei und mit Freude. Ihre freiwillige Gabe unterstützt den Dienst in Wiener Neustadt.',
   giveVerse: 'Ein jeder, wie er’s sich im Herzen vorgenommen hat, nicht mit Unwillen oder aus Zwang; denn einen fröhlichen Geber hat Gott lieb.',
   giveVerseRef: '2. Korinther 9,7',

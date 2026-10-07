@@ -78,10 +78,10 @@ module.exports = {
 <li>Your rights under the GDPR: access, rectification, erasure, restriction, data portability and objection. Contact us by phone. You may also complain to the Austrian Data Protection Authority (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener">dsb.gv.at</a>).</li>
 </ul>`,
 
-  navGive: 'Give',
-  giveTitle: 'Give – free-will gift | The Light of God Ministries',
+  navGive: 'Offerings',
+  giveTitle: 'Offerings – free-will gift | The Light of God Ministries',
   giveDesc: 'Support the work of The Light of God Ministries Intl in Wiener Neustadt with a free-will gift.',
-  giveEyebrow: 'Free-will gift', giveH1: 'Give',
+  giveEyebrow: 'Free-will gift', giveH1: 'Offerings',
   giveLead: 'Give freely and joyfully. Your free-will gift supports the ministry in Wiener Neustadt.',
   giveVerse: 'Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver.',
   giveVerseRef: '2 Corinthians 9:7',

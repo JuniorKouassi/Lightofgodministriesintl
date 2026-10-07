@@ -78,10 +78,10 @@ module.exports = {
 <li>Vos droits selon le RGPD : accès, rectification, effacement, limitation, portabilité et opposition. Contactez-nous par téléphone. Vous pouvez aussi déposer une plainte auprès de l’autorité autrichienne de protection des données (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener">dsb.gv.at</a>).</li>
 </ul>`,
 
-  navGive: 'Faire un don',
-  giveTitle: 'Faire un don – don libre | The Light of God Ministries',
+  navGive: 'Offrandes',
+  giveTitle: 'Offrandes – don libre | The Light of God Ministries',
   giveDesc: 'Soutenez l’œuvre de The Light of God Ministries Intl à Wiener Neustadt par un don libre.',
-  giveEyebrow: 'Don libre', giveH1: 'Faire un don',
+  giveEyebrow: 'Don libre', giveH1: 'Offrandes',
   giveLead: 'Donnez librement et avec joie. Votre don libre soutient le ministère à Wiener Neustadt.',
   giveVerse: 'Que chacun donne comme il l’a résolu en son cœur, sans tristesse ni contrainte ; car Dieu aime celui qui donne avec joie.',
   giveVerseRef: '2 Corinthiens 9:7',
