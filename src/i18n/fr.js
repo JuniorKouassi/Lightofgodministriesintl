@@ -111,7 +111,7 @@ module.exports = {
   giftTypes: [
     { id: 'ordinary', name: 'Offrandes ordinaires', text: 'Votre offrande libre habituelle pour l’œuvre de l’église.' },
     { id: 'tithes', name: 'Dîmes', text: 'Votre dîme, rendue à Dieu avec reconnaissance.' },
-    { id: 'samaritan', name: 'Boîte du Samaritain', text: 'Dons pour aider les personnes dans le besoin.' }
+    { id: 'samaritan', name: 'Boîte du Samaritain', text: 'Un don pour aider les personnes dans le besoin, en Afrique et partout dans le monde.' }
   ],
   gfTitle: 'Donner en trois étapes', gfS1: 'Don', gfS2: 'Montant', gfS3: 'Payer',
   gfChooseType: 'Que souhaitez-vous donner ?', gfChooseAmount: 'Choisissez un montant', gfOther: 'Autre', gfAmountLabel: 'Votre montant en euros',

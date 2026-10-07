@@ -111,7 +111,7 @@ module.exports = {
   giftTypes: [
     { id: 'ordinary', name: 'Ordinary offerings', text: 'Your regular free-will offering for the work of the church.' },
     { id: 'tithes', name: 'Tithes', text: 'Your tithe, given back to God with thanks.' },
-    { id: 'samaritan', name: 'Samaritan Box', text: 'Gifts to help people in need.' }
+    { id: 'samaritan', name: 'Samaritan Box', text: 'A gift to help the needy, in Africa and everywhere in the world.' }
   ],
   gfTitle: 'Give in three steps', gfS1: 'Gift', gfS2: 'Amount', gfS3: 'Pay',
   gfChooseType: 'What would you like to give?', gfChooseAmount: 'Choose an amount', gfOther: 'Other', gfAmountLabel: 'Your amount in euros',

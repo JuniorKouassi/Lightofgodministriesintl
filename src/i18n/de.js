@@ -111,7 +111,7 @@ module.exports = {
   giftTypes: [
     { id: 'ordinary', name: 'Allgemeine Gaben', text: 'Ihre reguläre freiwillige Gabe für die Arbeit der Gemeinde.' },
     { id: 'tithes', name: 'Zehnten', text: 'Ihr Zehnter, mit Dank an Gott zurückgegeben.' },
-    { id: 'samaritan', name: 'Samariter-Box', text: 'Gaben, um Menschen in Not zu helfen.' }
+    { id: 'samaritan', name: 'Samariter-Box', text: 'Eine Gabe, um Bedürftigen zu helfen – in Afrika und überall auf der Welt.' }
   ],
   gfTitle: 'Geben in drei Schritten', gfS1: 'Gabe', gfS2: 'Betrag', gfS3: 'Zahlen',
   gfChooseType: 'Was möchten Sie geben?', gfChooseAmount: 'Betrag wählen', gfOther: 'Anderer', gfAmountLabel: 'Ihr Betrag in Euro',
