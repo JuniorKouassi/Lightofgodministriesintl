@@ -145,6 +145,29 @@
     }, { passive: true });
   }
 
+  // About-section video: silent loop, loaded only when near the viewport, paused when off-screen.
+  // Reduced-motion and data-saver visitors keep the still poster image.
+  var av = document.getElementById('aboutVideo');
+  if (av) {
+    var avConn = navigator.connection || {};
+    var avSkip = (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) || avConn.saveData;
+    if (!avSkip && 'IntersectionObserver' in window) {
+      var avLoaded = false;
+      var avIo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            if (!avLoaded) {
+              avLoaded = true;
+              av.src = (window.matchMedia && matchMedia('(max-width: 860px)').matches) ? av.getAttribute('data-small') : av.getAttribute('data-large');
+            }
+            var pr = av.play(); if (pr && pr.catch) pr.catch(function () {});
+          } else if (avLoaded) { av.pause(); }
+        });
+      }, { rootMargin: '200px 0px', threshold: 0.15 });
+      avIo.observe(av);
+    }
+  }
+
   // Offerings flow: gift type -> amount -> pay
   var gf = document.getElementById('giveFlow');
   if (gf) {

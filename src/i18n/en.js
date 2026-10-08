@@ -124,6 +124,8 @@ module.exports = {
   gfErrType: 'Please choose a gift.', gfErrAmount: 'Please enter an amount of at least 1 euro.',
   legalPay: 'If you give by card or PayPal, you are sent to Stripe or PayPal, which process your payment data under their own privacy policies. We do not receive your card details.',
 
+  aboutVideoLabel: 'Video from a service at The Light of God Ministries',
+
   js: {
     days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
     labels: { sun: 'Church Service', mon: 'Online Bible Study', wed: 'Prayer Meeting' },

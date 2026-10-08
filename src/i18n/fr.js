@@ -124,6 +124,8 @@ module.exports = {
   gfErrType: 'Veuillez choisir un don.', gfErrAmount: 'Veuillez saisir un montant d’au moins 1 euro.',
   legalPay: 'Si vous donnez par carte ou PayPal, vous êtes redirigé vers Stripe ou PayPal, qui traitent vos données de paiement selon leur propre politique de confidentialité. Nous ne recevons pas vos données de carte.',
 
+  aboutVideoLabel: 'Vidéo d’un culte à The Light of God Ministries',
+
   js: {
     days: ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'],
     labels: { sun: 'Culte', mon: 'Étude biblique en ligne', wed: 'Réunion de prière' },

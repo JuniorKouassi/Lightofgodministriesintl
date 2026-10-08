@@ -124,6 +124,8 @@ module.exports = {
   gfErrType: 'Bitte wählen Sie eine Gabe.', gfErrAmount: 'Bitte geben Sie einen Betrag von mindestens 1 Euro ein.',
   legalPay: 'Wenn Sie per Karte oder PayPal geben, werden Sie zu Stripe oder PayPal weitergeleitet, die Ihre Zahlungsdaten nach ihren eigenen Datenschutzbestimmungen verarbeiten. Wir erhalten Ihre Kartendaten nicht.',
 
+  aboutVideoLabel: 'Video aus einem Gottesdienst bei The Light of God Ministries',
+
   js: {
     days: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
     labels: { sun: 'Gottesdienst', mon: 'Online-Bibelstudium', wed: 'Gebetstreffen' },

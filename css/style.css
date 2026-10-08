@@ -368,3 +368,9 @@ h2.h3:first-child{margin-top:0}
 .gf-bank .bank dd{word-break:normal;overflow-wrap:anywhere}
 @media (max-width:640px){.gf-bank .bank{grid-template-columns:1fr;gap:.1rem}.gf-bank .bank dt{margin-top:.6rem;font-size:.8rem}.gf-bank .bank dd{overflow-wrap:normal}}
 .gf-m-name small{display:block;font-weight:500;font-size:.8rem;opacity:.75;margin-top:.1rem}
+
+/* about-section video */
+.about-grid.has-video{grid-template-columns:1.05fr .95fr;gap:3.5rem}
+.about-video{margin:0;border-radius:var(--radius);overflow:hidden;background:#2e0145;aspect-ratio:16/9;box-shadow:0 0 0 1px rgba(178,106,0,.55),0 0 0 8px rgba(178,106,0,.14),0 28px 60px rgba(0,0,0,.45)}
+.about-video video{display:block;width:100%;height:100%;object-fit:cover}
+@media (max-width:860px){.about-grid.has-video{grid-template-columns:1fr;gap:2rem}}
