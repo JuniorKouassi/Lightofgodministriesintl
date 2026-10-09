@@ -14,6 +14,8 @@ const PAGES = [
   { id: 'give', slug: 'give', title: 'giveTitle', desc: 'giveDesc' },
   { id: 'legal', slug: 'legal', title: 'legalTitle', desc: 'legalDesc' }
 ];
+// Public address of the site. Share previews need absolute URLs, so change this one line when a real domain is connected.
+const SITE_URL = 'https://lightofgodministriesintl.kouassij019.workers.dev';
 const SKIP = { en: 'Skip to content', de: 'Zum Inhalt springen', fr: 'Aller au contenu' };
 
 const LINKS = {
@@ -97,7 +99,7 @@ function build() {
       const deptInfo = page.dept ? t.departments.find(x => DEPT_SLUG[x.icon] === page.dept) : null;
       const root = '../'.repeat(depthOf(dir));
       const href = (l, p) => root + dirOf(l, p) || './';
-      const vars = { ...t, ...LINKS, page: page.id, root, skip: SKIP[lang], pageTitle: deptInfo ? `${deptInfo.name} – ${t.depGalleryEyebrow} – The Light of God Ministries` : t[page.title], pageDesc: deptInfo ? deptInfo.text : t[page.desc] };
+      const vars = { ...t, ...LINKS, siteUrl: SITE_URL, ogUrl: SITE_URL + '/' + dir, page: page.id, root, skip: SKIP[lang], pageTitle: deptInfo ? `${deptInfo.name} – ${t.depGalleryEyebrow} – The Light of God Ministries` : t[page.title], pageDesc: deptInfo ? deptInfo.text : t[page.desc] };
       for (const p of PAGES) {
         vars['h' + p.id[0].toUpperCase() + p.id.slice(1)] = href(lang, p);
         vars['cur_' + p.id] = p.id === page.id ? ' aria-current="page"' : '';
