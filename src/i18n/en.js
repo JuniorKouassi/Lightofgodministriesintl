@@ -67,8 +67,8 @@ module.exports = {
 <h2>Legal notice</h2>
 <p><strong>The Light of God Ministries International – Wiener Neustadt</strong><br>Bräunlichgasse 24<br>2700 Wiener Neustadt, Austria<br>Phone / WhatsApp: <a href="tel:+436769465931">+43 676 9465931</a></p>
 <p>Legal form: independent local congregation of the <em>Freikirchen in Österreich</em> (Free Churches in Austria), a legally recognised church (Ordinance of 26 August 2013, BGBl. II No. 250/2013), with the status of a corporation under public law (Art. V of the church’s constitution).</p>
-<p>Registered as: The Light of God Ministries International Vienna – Freie Christengemeinde – Pfingstgemeinde. Notification of 30 November 2020, reference (GZ) 2020-0.787.449, Federal Chancellery (Bundeskanzleramt), Kultusamt.</p>
-<p>Represented by: Ignatius Omoighe and Osaremwanta Obakpolor.</p>
+<p>Registered as: The Light of God Ministries International Vienna – Freie Christengemeinde – Pfingstgemeinde. Notification of 30 November 2020, reference (GZ) 2020-0.787.449, Federal Chancellery (Bundeskanzleramt), Kultusamt. The Wiener Neustadt congregation is part of this registration.</p>
+<p>Represented by: Ignatius Omoighe and Osaremwanta (Osas) Obakpolor.</p>
 <h2>Privacy</h2>
 <ul>
 <li>This website uses no cookies, no analytics and no tracking, and it has no forms.</li>
