@@ -10,10 +10,10 @@ module.exports = {
 
   dayMon: 'Montag', dayWed: 'Mittwoch', daySun: 'Sonntag',
   svcBible: 'Online-Bibelstudium', svcPrayer: 'Gebetstreffen', svcService: 'Gottesdienst',
-  svcBibleText: 'Gemeinsam in Gottes Wort lesen – von überall aus.',
+  svcBibleText: 'Gemeinsam in Gottes Wort lesen – per Zoom, von überall aus.',
   svcPrayerText: 'Wir kommen im Gebet zusammen – für unsere Familien, unsere Stadt und die Nationen.',
   svcServiceText: 'Lobpreis, Gottes Wort und Gemeinschaft. Unser Hauptgottesdienst der Woche.',
-  askLink: 'Link per WhatsApp anfragen →',
+  askLink: 'Zoom-Link per WhatsApp anfragen →',
   openMaps: 'In Google Maps öffnen', getDirections: 'Route planen', callUs: 'Anrufen', whatsapp: 'Per WhatsApp schreiben',
   morePage: 'Mehr erfahren →',
 
@@ -44,7 +44,7 @@ module.exports = {
   gathTitle: 'Dienste – The Light of God Ministries',
   gathDesc: 'Wöchentliche Treffen in Wiener Neustadt: Gottesdienst sonntags 10:00–12:30, Gebetstreffen mittwochs 17:00–18:30, Online-Bibelstudium montags 17:30–19:00.',
   gathH1: 'Dienste', gathLead: 'Jeder ist willkommen. Kommen Sie, wie Sie sind.',
-  gathWhere: 'Wo', gathOnline: 'Online',
+  gathWhere: 'Wo', gathOnline: 'Online über Zoom',
 
   prTitle: 'Predigten – The Light of God Ministries',
   prDesc: 'Sehen Sie unsere Gottesdienste und Botschaften online auf YouTube und folgen Sie uns auf Facebook, Instagram und TikTok.',

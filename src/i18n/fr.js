@@ -10,10 +10,10 @@ module.exports = {
 
   dayMon: 'Lundi', dayWed: 'Mercredi', daySun: 'Dimanche',
   svcBible: 'Étude biblique en ligne', svcPrayer: 'Réunion de prière', svcService: 'Culte',
-  svcBibleText: 'Étudions la Parole ensemble, d’où que vous soyez.',
+  svcBibleText: 'Étudions la Parole ensemble sur Zoom, d’où que vous soyez.',
   svcPrayerText: 'Nous nous réunissons dans la prière pour nos familles, notre ville et les nations.',
   svcServiceText: 'Louange, Parole et communion fraternelle. Notre rassemblement principal de la semaine.',
-  askLink: 'Demandez le lien sur WhatsApp →',
+  askLink: 'Demandez le lien Zoom sur WhatsApp →',
   openMaps: 'Ouvrir dans Google Maps', getDirections: 'Itinéraire', callUs: 'Appeler', whatsapp: 'Écrire sur WhatsApp',
   morePage: 'En savoir plus →',
 
@@ -44,7 +44,7 @@ module.exports = {
   gathTitle: 'Cultes – The Light of God Ministries',
   gathDesc: 'Rencontres hebdomadaires à Wiener Neustadt : culte le dimanche 10h00–12h30, réunion de prière le mercredi 17h00–18h30, étude biblique en ligne le lundi 17h30–19h00.',
   gathH1: 'Cultes', gathLead: 'Tout le monde est le bienvenu. Venez comme vous êtes.',
-  gathWhere: 'Où', gathOnline: 'En ligne',
+  gathWhere: 'Où', gathOnline: 'En ligne via Zoom',
 
   prTitle: 'Prédications – The Light of God Ministries',
   prDesc: 'Regardez nos cultes et nos messages en ligne sur YouTube, et suivez-nous sur Facebook, Instagram et TikTok.',

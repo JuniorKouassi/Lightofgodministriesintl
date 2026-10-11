@@ -10,10 +10,10 @@ module.exports = {
 
   dayMon: 'Monday', dayWed: 'Wednesday', daySun: 'Sunday',
   svcBible: 'Online Bible Study', svcPrayer: 'Prayer Meeting', svcService: 'Church Service',
-  svcBibleText: 'Study the Word together, from wherever you are.',
+  svcBibleText: 'Study the Word together on Zoom, from wherever you are.',
   svcPrayerText: 'Gather in prayer for our families, our city and the nations.',
   svcServiceText: 'Worship, the Word and fellowship. Our main gathering of the week.',
-  askLink: 'Ask us for the link on WhatsApp →',
+  askLink: 'Ask us for the Zoom link on WhatsApp →',
   openMaps: 'Open in Google Maps', getDirections: 'Get directions', callUs: 'Call us', whatsapp: 'Message on WhatsApp',
   morePage: 'Read more →',
 
@@ -44,7 +44,7 @@ module.exports = {
   gathTitle: 'Services – The Light of God Ministries',
   gathDesc: 'Weekly gatherings in Wiener Neustadt: Sunday church service 10:00–12:30, Wednesday prayer meeting 17:00–18:30, Monday online Bible study 17:30–19:00.',
   gathH1: 'Services', gathLead: 'Everyone is welcome. Come as you are.',
-  gathWhere: 'Where', gathOnline: 'Online',
+  gathWhere: 'Where', gathOnline: 'Online via Zoom',
 
   prTitle: 'Preachings – The Light of God Ministries',
   prDesc: 'Watch our services and messages online on YouTube, and follow us on Facebook, Instagram and TikTok.',
