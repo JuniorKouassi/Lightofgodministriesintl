@@ -29,7 +29,7 @@ const LINKS = {
 
 // Giving details. Fill these in to show a bank-transfer card and/or an online-giving button on the Give page.
 // While empty, the page shows only the "call or WhatsApp us" card (no details are invented).
-const GIVE = { holder: 'The Light of God Ministries', iban: 'AT74 3200 0000 1342 0641', bic: '', reference: '', paymentLink: '' };
+const GIVE = { holder: 'The Light of God Ministries', iban: 'AT74 3200 0000 1342 0641', bic: 'RLNWATWW', reference: '', paymentLink: '' };
 
 const DEPT_ICONS = {
   music: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>',
