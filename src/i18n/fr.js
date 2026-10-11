@@ -66,8 +66,9 @@ module.exports = {
   legalBody: `
 <h2>Mentions légales</h2>
 <p><strong>The Light of God Ministries International – Wiener Neustadt</strong><br>Bräunlichgasse 24<br>2700 Wiener Neustadt, Autriche<br>Téléphone / WhatsApp : <a href="tel:+436769465931">+43 676 9465931</a></p>
-<p>Représentée par : Pasteur Osas Obakpolor</p>
-<p>Forme juridique et numéro d’enregistrement : <em>à compléter par l’église.</em></p>
+<p>Forme juridique : communauté locale autonome des <em>Freikirchen in Österreich</em> (Églises libres en Autriche), église légalement reconnue (ordonnance du 26.08.2013, BGBl. II n° 250/2013), ayant le statut de corporation de droit public (art. V de la constitution de l’église).</p>
+<p>Enregistrée sous : The Light of God Ministries International Vienna – Freie Christengemeinde – Pfingstgemeinde. Notification du 30.11.2020, référence (GZ) 2020-0.787.449, Chancellerie fédérale (Bundeskanzleramt), Kultusamt.</p>
+<p>Représentée par : Ignatius Omoighe et Osaremwanta Obakpolor.</p>
 <h2>Confidentialité</h2>
 <ul>
 <li>Ce site n’utilise ni cookies, ni outils d’analyse, ni traçage, et ne contient aucun formulaire.</li>
@@ -125,6 +126,8 @@ module.exports = {
   legalPay: 'Si vous donnez par carte ou PayPal, vous êtes redirigé vers Stripe ou PayPal, qui traitent vos données de paiement selon leur propre politique de confidentialité. Nous ne recevons pas vos données de carte.',
 
   aboutVideoLabel: 'Vidéo d’un culte à The Light of God Ministries',
+
+  meetId: 'ID de réunion', meetCode: 'Code d’accès',
 
   js: {
     days: ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'],

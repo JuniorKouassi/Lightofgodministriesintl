@@ -225,7 +225,7 @@
       setMethod(gf.querySelector('[data-m="paypal"]'), pp);
       document.getElementById('gf-holder').textContent = cfg.bank.holder;
       document.getElementById('gf-iban').textContent = cfg.bank.iban;
-      document.getElementById('gf-bic').textContent = cfg.bank.bic;
+      var bicEl = document.getElementById('gf-bic'); if (bicEl) bicEl.textContent = cfg.bank.bic;
       document.getElementById('gf-ref').textContent = cfg.names[state.type];
     };
     gf.addEventListener('click', function (e) {

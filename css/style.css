@@ -374,3 +374,10 @@ h2.h3:first-child{margin-top:0}
 .about-video{margin:0;border-radius:var(--radius);overflow:hidden;background:#2e0145;aspect-ratio:16/9;box-shadow:0 0 0 1px rgba(178,106,0,.55),0 0 0 8px rgba(178,106,0,.14),0 28px 60px rgba(0,0,0,.45)}
 .about-video video{display:block;width:100%;height:100%;object-fit:cover}
 @media (max-width:860px){.about-grid.has-video{grid-template-columns:1fr;gap:2rem}}
+
+/* online meeting details */
+.meet{display:grid;grid-template-columns:auto 1fr;gap:.2rem .9rem;margin:.9rem 0 .2rem;padding:.7rem .9rem;border-radius:12px;background:rgba(128,29,166,.08);font-size:.9rem}
+.meet dt{font-weight:700;color:var(--indigo-700)}
+.meet dd{margin:0;font-weight:700;letter-spacing:.04em;font-variant-numeric:tabular-nums}
+.featured .meet{background:rgba(255,255,255,.12)}
+.featured .meet dt{color:var(--gold-soft)}

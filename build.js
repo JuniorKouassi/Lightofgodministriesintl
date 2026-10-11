@@ -29,7 +29,7 @@ const LINKS = {
 
 // Giving details. Fill these in to show a bank-transfer card and/or an online-giving button on the Give page.
 // While empty, the page shows only the "call or WhatsApp us" card (no details are invented).
-const GIVE = { holder: 'Osaremwanta Obakpolor', iban: 'AT56 2026 7020 1202 5629', bic: 'WINSATWN', reference: '', paymentLink: '' };
+const GIVE = { holder: 'The Light of God Ministries', iban: 'AT74 3200 0000 1342 0641', bic: '', reference: '', paymentLink: '' };
 
 const DEPT_ICONS = {
   music: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>',
@@ -48,6 +48,9 @@ const pad2 = n => String(n).padStart(2, '0');
 // Online payment links. Leave empty until the accounts exist: the buttons then show "Available soon".
 // stripe = one Stripe Payment Link per gift type (the donor confirms the amount on Stripe's page).
 // paypalMe = the PayPal.Me username; the chosen amount is added to the link automatically.
+// Online Bible study meeting (from the flyer). Shown on the Monday card.
+const MEETING = { id: '251 603 2231', code: 'RDH2Xu' };
+
 const PAY = { currency: 'EUR', presets: [10, 20, 50, 100], stripe: { ordinary: '', tithes: '', samaritan: '' }, paypalMe: '' };
 const PAY_ON = !!(PAY.paypalMe || Object.values(PAY.stripe).some(Boolean));
 const attrEsc = s => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
@@ -185,7 +188,7 @@ function build() {
               <dl class="bank">
                 <dt>${t.gfHolder}</dt><dd id="gf-holder"></dd>
                 <dt>${t.giveIban}</dt><dd><span id="gf-iban"></span> <button type="button" class="gf-copy" data-copy-target="gf-iban">${t.gfCopy}</button></dd>
-                <dt>${t.giveBic}</dt><dd id="gf-bic"></dd>
+                ${GIVE.bic ? `<dt>${t.giveBic}</dt><dd id="gf-bic"></dd>` : ''}
                 <dt>${t.giveRef}</dt><dd><span id="gf-ref"></span> <button type="button" class="gf-copy" data-copy-target="gf-ref">${t.gfCopy}</button></dd>
               </dl>
             </div>
@@ -197,6 +200,8 @@ function build() {
       }
       vars.i18nJson = JSON.stringify(t.js).replace(/</g, '\\u003c');
 
+      const meet = s => s.online ? `
+            <dl class="meet"><dt>${t.meetId}</dt><dd>${MEETING.id}</dd><dt>${t.meetCode}</dt><dd>${MEETING.code}</dd></dl>` : '';
       const svc = [
         { day: t.dayMon, name: t.svcBible, time: '17:30 – 19:00', text: t.svcBibleText, online: true },
         { day: t.dayWed, name: t.svcPrayer, time: '17:00 – 18:30', text: t.svcPrayerText },
@@ -207,7 +212,7 @@ function build() {
             <span class="day">${s.day}</span>
             <h3>${s.name}</h3>
             <p class="time">${s.time}</p>
-            <p>${s.text}</p>
+            <p>${s.text}</p>${meet(s)}
             ${s.online
               ? `<a class="link" href="${LINKS.whatsappUrl}" target="_blank" rel="noopener">${t.askLink}</a>`
               : `<a class="link" href="${vars.hVisit}">Bräunlichgasse 24 →</a>`}
@@ -217,7 +222,7 @@ function build() {
             <span class="day">${s.day}</span>
             <h3>${s.name}</h3>
             <p class="time">${s.time}</p>
-            <p>${s.text}</p>
+            <p>${s.text}</p>${meet(s)}
             <p class="where-line">${s.online ? t.gathOnline : 'Bräunlichgasse 24, Wiener Neustadt'}</p>
             ${s.online ? `<a class="link" href="${LINKS.whatsappUrl}" target="_blank" rel="noopener">${t.askLink}</a>` : ''}
           </article>`).join('') + '\n        </div>';
