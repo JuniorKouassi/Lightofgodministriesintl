@@ -102,7 +102,7 @@ function build() {
       const deptInfo = page.dept ? t.departments.find(x => DEPT_SLUG[x.icon] === page.dept) : null;
       const root = '../'.repeat(depthOf(dir));
       const href = (l, p) => root + dirOf(l, p) || './';
-      const vars = { ...t, ...LINKS, siteUrl: SITE_URL, ogUrl: SITE_URL + '/' + dir, page: page.id, root, skip: SKIP[lang], pageTitle: deptInfo ? `${deptInfo.name} – ${t.depGalleryEyebrow} – The Light of God Ministries` : t[page.title], pageDesc: deptInfo ? deptInfo.text : t[page.desc] };
+      const vars = { ...t, ...LINKS, siteUrl: SITE_URL, ogUrl: SITE_URL + '/' + dir, page: page.id, root, skip: SKIP[lang], pageTitle: deptInfo ? `${deptInfo.name} – ${t.depGalleryEyebrow} – The Light of God Ministries` : t[page.title], pageDesc: deptInfo ? `${deptInfo.text} – ${deptInfo.name}, The Light of God Ministries, Wiener Neustadt` : t[page.desc] };
       for (const p of PAGES) {
         vars['h' + p.id[0].toUpperCase() + p.id.slice(1)] = href(lang, p);
         vars['cur_' + p.id] = p.id === page.id ? ' aria-current="page"' : '';
@@ -145,6 +145,29 @@ function build() {
           <li><a href="${root}assets/departments/${slug}/${pad2(n)}.jpg" data-lightbox data-alt="${alt}"><img src="${root}assets/departments/${slug}/t-${pad2(n)}.jpg" alt="${alt}" width="900" height="600" loading="lazy"></a></li>`;
         }).join('') + '\n        </ul>';
       }
+      // Search engines: the page's own address, its language versions, and (home page) the first image to fetch.
+      const absUrl = l => SITE_URL + '/' + dirOf(l, page);
+      vars.headLinks = `<link rel="canonical" href="${absUrl(lang)}">`
+        + LANGS.map(l => `
+  <link rel="alternate" hreflang="${l}" href="${absUrl(l)}">`).join('')
+        + `
+  <link rel="alternate" hreflang="x-default" href="${absUrl('en')}">`
+        + (page.id === 'home' ? `
+  <link rel="preload" as="image" href="${root}assets/hero-poster.jpg" fetchpriority="high">` : '');
+      // Structured data for Google: the church, its address, phone and weekly services (home and visit pages).
+      vars.jsonLd = (page.id === 'home' || page.id === 'visit') ? '<script type="application/ld+json">' + JSON.stringify({
+        '@context': 'https://schema.org', '@type': 'Church',
+        name: 'The Light of God Ministries International', alternateName: 'Light of God Ministries Intl',
+        url: absUrl(lang), logo: SITE_URL + '/assets/logo.png', image: SITE_URL + '/assets/share-preview.jpg',
+        description: t[page.desc], inLanguage: lang, telephone: '+436769465931',
+        address: { '@type': 'PostalAddress', streetAddress: 'Bräunlichgasse 24', postalCode: '2700', addressLocality: 'Wiener Neustadt', addressCountry: 'AT' },
+        geo: { '@type': 'GeoCoordinates', latitude: 47.8055659, longitude: 16.2324733 },
+        sameAs: [LINKS.facebook, LINKS.youtube, LINKS.instagram, LINKS.tiktok],
+        openingHoursSpecification: [
+          { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Sunday', opens: '10:00', closes: '12:30' },
+          { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Wednesday', opens: '17:00', closes: '18:30' }
+        ]
+      }).replace(/</g, '\u003c') + '</script>' : '';
       vars.iconYoutubeButton = '<svg class="yt-mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="4.5" width="21" height="15" rx="4.5" fill="#fff"/><path d="M10 9l5.5 3-5.5 3z" fill="#e00000"/></svg>';
       vars.giveBankCard = GIVE.iban ? `<article class="card"><span class="day">${t.giveBankTitle}</span><h3>${GIVE.holder}</h3><dl class="bank"><dt>${t.giveIban}</dt><dd>${GIVE.iban}</dd>${GIVE.bic ? `<dt>${t.giveBic}</dt><dd>${GIVE.bic}</dd>` : ''}${GIVE.reference ? `<dt>${t.giveRef}</dt><dd>${GIVE.reference}</dd>` : ''}</dl></article>` : '';
       vars.giveLinkCard = GIVE.paymentLink ? `<article class="card featured"><span class="day">${t.giveEyebrow}</span><h3>${t.giveH1}</h3><p>${t.giveThanks}</p><a class="btn btn-gold" href="${GIVE.paymentLink}" target="_blank" rel="noopener">${t.giveLinkCta}</a></article>` : '';
@@ -238,6 +261,42 @@ function build() {
       count++;
     }
   }
+  // sitemap.xml, robots.txt and the 404 page (written next to index.html at the site root)
+  const today = new Date().toISOString().slice(0, 10);
+  const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+    + [...PAGES, ...DEPT_PAGES].flatMap(page => LANGS.map(l => {
+      const alternates = LANGS.map(a => `    <xhtml:link rel="alternate" hreflang="${a}" href="${SITE_URL}/${dirOf(a, page)}"/>`).join('\n')
+        + `\n    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/${dirOf('en', page)}"/>`;
+      return `  <url>\n    <loc>${SITE_URL}/${dirOf(l, page)}</loc>\n    <lastmod>${today}</lastmod>\n${alternates}\n  </url>`;
+    })).join('\n') + '\n</urlset>\n';
+  fs.writeFileSync(path.join(__dirname, 'sitemap.xml'), sitemap, 'utf8');
+  fs.writeFileSync(path.join(__dirname, 'robots.txt'), `User-agent: *
+Allow: /
+
+Sitemap: ${SITE_URL}/sitemap.xml
+`, 'utf8');
+  const notFound = `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Page not found | The Light of God Ministries</title>
+  <link rel="icon" href="/assets/logo-96.png">
+  <link rel="stylesheet" href="/css/fonts.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main id="main" class="wrap" style="padding:96px 0;text-align:center">
+    <img src="/assets/logo-96.png" alt="" width="64" height="64">
+    <h1>Page not found</h1>
+    <p>Diese Seite gibt es nicht. · Cette page n'existe pas.</p>
+    <p><a class="btn btn-gold" href="/">English</a> <a class="btn btn-gold" href="/de/">Deutsch</a> <a class="btn btn-gold" href="/fr/">Français</a></p>
+  </main>
+</body>
+</html>
+`;
+  fs.writeFileSync(path.join(__dirname, '404.html'), notFound, 'utf8');
   console.log(`Built ${count} pages`);
 }
 build();

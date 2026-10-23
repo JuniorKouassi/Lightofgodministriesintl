@@ -17,7 +17,7 @@ module.exports = {
   openMaps: 'Open in Google Maps', getDirections: 'Get directions', callUs: 'Call us', whatsapp: 'Message on WhatsApp',
   morePage: 'Read more →',
 
-  homeTitle: 'The Light of God Ministries International – Wiener Neustadt',
+  homeTitle: 'Church in Wiener Neustadt | The Light of God Ministries International',
   homeDesc: 'Evangelical gospel church in Wiener Neustadt, Austria. Sunday service 10:00–12:30, Wednesday prayer, Monday online Bible study. Everyone is welcome.',
   heroEyebrow: 'Evangelical Gospel Church · Wiener Neustadt, Austria',
   heroTitle: '<em>The Light of God Ministries Intl</em>',
@@ -33,7 +33,7 @@ module.exports = {
   homePreachCta: 'Visit our YouTube channel',
   homeVisitEyebrow: 'Visit us', homeVisitTitle: 'Find us in Wiener Neustadt', homeVisitCta: 'Visit & contact →',
 
-  aboutTitle: 'About us – The Light of God Ministries International',
+  aboutTitle: 'About our church in Wiener Neustadt | Light of God Ministries',
   aboutDesc: 'The Light of God Ministries International is an evangelical gospel church in Wiener Neustadt, Austria. Our verse: Matthew 5:14.',
   aboutH1: 'About us', aboutVerseLabel: 'Our verse',
   aboutLogoAlt: 'Logo of The Light of God Ministries International: a cross over a globe and an open Bible',
@@ -41,19 +41,19 @@ module.exports = {
   leadPastor: 'Pastor Osas Obakpolor', leadDeaconess: 'Deaconess Petra Obakpolor',
   leadAlt: 'Pastor Osas Obakpolor and Deaconess Petra Obakpolor, dressed in purple traditional attire',
 
-  gathTitle: 'Services – The Light of God Ministries',
+  gathTitle: 'Church services in Wiener Neustadt | Light of God Ministries',
   gathDesc: 'Weekly gatherings in Wiener Neustadt: Sunday church service 10:00–12:30, Wednesday prayer meeting 17:00–18:30, Monday online Bible study 17:30–19:00.',
   gathH1: 'Services', gathLead: 'Everyone is welcome. Come as you are.',
   gathWhere: 'Where', gathOnline: 'Online via Zoom',
 
-  prTitle: 'Preachings – The Light of God Ministries',
-  prDesc: 'Watch our services and messages online on YouTube, and follow us on Facebook, Instagram and TikTok.',
+  prTitle: 'Sermons and preachings online | Light of God Ministries Wiener Neustadt',
+  prDesc: 'Watch the services and messages of The Light of God Ministries in Wiener Neustadt online on YouTube, and follow us on Facebook, Instagram and TikTok.',
   prH1: 'Preachings', prLead: 'Can’t make it in person? Follow our services and messages online.',
   prYtText: 'Watch our services and messages.', prYtCta: 'Watch on YouTube',
   prFbText: 'News and updates from our church family.', prFbCta: 'Follow on Facebook',
   prMore: 'You can also find us on',
 
-  visitTitle: 'Visit & Contact – The Light of God Ministries',
+  visitTitle: 'Visit our church in Wiener Neustadt | Light of God Ministries',
   visitDesc: 'Find The Light of God Ministries at Bräunlichgasse 24, 2700 Wiener Neustadt. Call or message us on WhatsApp: +43 676 9465931.',
   visitH1: 'Visit & Contact', visitLead: 'We would love to meet you.',
   addrLabel: 'Address', phoneLabel: 'Phone & WhatsApp', timesLabel: 'Gatherings',
@@ -92,7 +92,7 @@ module.exports = {
   giveLinkCta: 'Give online', giveThanks: 'Thank you for your generosity.',
 
   navDepartments: 'Departments',
-  depTitle: 'Departments – The Light of God Ministries',
+  depTitle: 'Church departments: choir, media, children | Light of God Ministries Wiener Neustadt',
   depDesc: 'The departments of The Light of God Ministries in Wiener Neustadt: choir, media and children. Ask how to join and serve.',
   depEyebrow: 'Serve with us', depH1: 'Our departments',
   depLead: 'Everyone is invited to serve with their gifts. Find a department and ask how to join.',

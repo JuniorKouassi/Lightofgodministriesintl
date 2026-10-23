@@ -1,0 +1,9 @@
+src/
+tools/
+build.js
+mockups/
+img/
+*.mp4
+.git
+.gitignore
+.assetsignore

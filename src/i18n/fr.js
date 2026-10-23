@@ -17,8 +17,8 @@ module.exports = {
   openMaps: 'Ouvrir dans Google Maps', getDirections: 'Itinéraire', callUs: 'Appeler', whatsapp: 'Écrire sur WhatsApp',
   morePage: 'En savoir plus →',
 
-  homeTitle: 'The Light of God Ministries International – Wiener Neustadt',
-  homeDesc: 'Église évangélique à Wiener Neustadt, en Autriche. Culte le dimanche de 10h00 à 12h30, prière le mercredi, étude biblique en ligne le lundi. Tout le monde est le bienvenu.',
+  homeTitle: 'Église à Wiener Neustadt | The Light of God Ministries International',
+  homeDesc: 'Église évangélique à Wiener Neustadt, Autriche. Culte le dimanche 10h00–12h30, prière le mercredi, étude biblique en ligne le lundi. Tous sont bienvenus.',
   heroEyebrow: 'Église évangélique · Wiener Neustadt, Autriche',
   heroTitle: '<em>The Light of God Ministries Intl</em>',
   heroSub: 'Tout le monde est le bienvenu. Venez comme vous êtes et rencontrez Dieu avec nous.',
@@ -33,7 +33,7 @@ module.exports = {
   homePreachCta: 'Voir la chaîne YouTube',
   homeVisitEyebrow: 'Venez nous voir', homeVisitTitle: 'Retrouvez-nous à Wiener Neustadt', homeVisitCta: 'Visite & contact →',
 
-  aboutTitle: 'À propos – The Light of God Ministries International',
+  aboutTitle: 'À propos de notre église à Wiener Neustadt | Light of God Ministries',
   aboutDesc: 'The Light of God Ministries International est une église évangélique à Wiener Neustadt, en Autriche. Notre verset : Matthieu 5:14.',
   aboutH1: 'À propos', aboutVerseLabel: 'Notre verset',
   aboutLogoAlt: 'Logo de The Light of God Ministries International : une croix sur un globe et une Bible ouverte',
@@ -41,19 +41,19 @@ module.exports = {
   leadPastor: 'Pasteur Osas Obakpolor', leadDeaconess: 'Diaconesse Petra Obakpolor',
   leadAlt: 'Le pasteur Osas Obakpolor et la diaconesse Petra Obakpolor, en tenues traditionnelles violettes',
 
-  gathTitle: 'Cultes – The Light of God Ministries',
+  gathTitle: 'Cultes à Wiener Neustadt | Light of God Ministries',
   gathDesc: 'Rencontres hebdomadaires à Wiener Neustadt : culte le dimanche 10h00–12h30, réunion de prière le mercredi 17h00–18h30, étude biblique en ligne le lundi 17h30–19h00.',
   gathH1: 'Cultes', gathLead: 'Tout le monde est le bienvenu. Venez comme vous êtes.',
   gathWhere: 'Où', gathOnline: 'En ligne via Zoom',
 
-  prTitle: 'Prédications – The Light of God Ministries',
-  prDesc: 'Regardez nos cultes et nos messages en ligne sur YouTube, et suivez-nous sur Facebook, Instagram et TikTok.',
+  prTitle: 'Prédications en ligne | Light of God Ministries Wiener Neustadt',
+  prDesc: 'Regardez les cultes et les messages de The Light of God Ministries à Wiener Neustadt en ligne sur YouTube, et suivez-nous sur Facebook, Instagram et TikTok.',
   prH1: 'Prédications', prLead: 'Vous ne pouvez pas venir ? Suivez nos cultes et nos messages en ligne.',
   prYtText: 'Regardez nos cultes et nos messages.', prYtCta: 'Regarder sur YouTube',
   prFbText: 'Des nouvelles de notre famille d’église.', prFbCta: 'Suivre sur Facebook',
   prMore: 'Retrouvez-nous aussi sur',
 
-  visitTitle: 'Visite & contact – The Light of God Ministries',
+  visitTitle: 'Visiter notre église à Wiener Neustadt | Light of God Ministries',
   visitDesc: 'The Light of God Ministries se trouve au Bräunlichgasse 24, 2700 Wiener Neustadt. Appelez-nous ou écrivez-nous sur WhatsApp : +43 676 9465931.',
   visitH1: 'Visite & contact', visitLead: 'Nous serions ravis de vous rencontrer.',
   addrLabel: 'Adresse', phoneLabel: 'Téléphone & WhatsApp', timesLabel: 'Rencontres',
@@ -92,7 +92,7 @@ module.exports = {
   giveLinkCta: 'Donner en ligne', giveThanks: 'Merci pour votre générosité.',
 
   navDepartments: 'Départements',
-  depTitle: 'Départements – The Light of God Ministries',
+  depTitle: 'Départements : chorale, média, enfants | Light of God Ministries Wiener Neustadt',
   depDesc: 'Les départements de The Light of God Ministries à Wiener Neustadt : chorale, média et enfants. Demandez comment rejoindre et servir.',
   depEyebrow: 'Servir avec nous', depH1: 'Nos départements',
   depLead: 'Chacun est invité à servir avec ses dons. Trouvez un département et demandez comment le rejoindre.',

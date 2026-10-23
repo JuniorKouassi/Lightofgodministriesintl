@@ -17,7 +17,7 @@ module.exports = {
   openMaps: 'In Google Maps öffnen', getDirections: 'Route planen', callUs: 'Anrufen', whatsapp: 'Per WhatsApp schreiben',
   morePage: 'Mehr erfahren →',
 
-  homeTitle: 'The Light of God Ministries International – Wiener Neustadt',
+  homeTitle: 'Gemeinde in Wiener Neustadt | The Light of God Ministries International',
   homeDesc: 'Evangelikale Gospel-Gemeinde in Wiener Neustadt, Österreich. Gottesdienst sonntags 10:00–12:30, Gebet mittwochs, Online-Bibelstudium montags. Jeder ist willkommen.',
   heroEyebrow: 'Evangelikale Gospel-Gemeinde · Wiener Neustadt, Österreich',
   heroTitle: '<em>The Light of God Ministries Intl</em>',
@@ -33,7 +33,7 @@ module.exports = {
   homePreachCta: 'Zum YouTube-Kanal',
   homeVisitEyebrow: 'Besuchen Sie uns', homeVisitTitle: 'Sie finden uns in Wiener Neustadt', homeVisitCta: 'Besuch & Kontakt →',
 
-  aboutTitle: 'Über uns – The Light of God Ministries International',
+  aboutTitle: 'Über unsere Gemeinde in Wiener Neustadt | Light of God Ministries',
   aboutDesc: 'The Light of God Ministries International ist eine evangelikale Gospel-Gemeinde in Wiener Neustadt, Österreich. Unser Vers: Matthäus 5,14.',
   aboutH1: 'Über uns', aboutVerseLabel: 'Unser Vers',
   aboutLogoAlt: 'Logo von The Light of God Ministries International: ein Kreuz über einem Globus und einer aufgeschlagenen Bibel',
@@ -41,19 +41,19 @@ module.exports = {
   leadPastor: 'Pastor Osas Obakpolor', leadDeaconess: 'Diakonin Petra Obakpolor',
   leadAlt: 'Pastor Osas Obakpolor und Diakonin Petra Obakpolor in lilafarbener traditioneller Kleidung',
 
-  gathTitle: 'Dienste – The Light of God Ministries',
+  gathTitle: 'Gottesdienste in Wiener Neustadt | Light of God Ministries',
   gathDesc: 'Wöchentliche Treffen in Wiener Neustadt: Gottesdienst sonntags 10:00–12:30, Gebetstreffen mittwochs 17:00–18:30, Online-Bibelstudium montags 17:30–19:00.',
   gathH1: 'Dienste', gathLead: 'Jeder ist willkommen. Kommen Sie, wie Sie sind.',
   gathWhere: 'Wo', gathOnline: 'Online über Zoom',
 
-  prTitle: 'Predigten – The Light of God Ministries',
-  prDesc: 'Sehen Sie unsere Gottesdienste und Botschaften online auf YouTube und folgen Sie uns auf Facebook, Instagram und TikTok.',
+  prTitle: 'Predigten online | Light of God Ministries Wiener Neustadt',
+  prDesc: 'Sehen Sie die Gottesdienste und Predigten von The Light of God Ministries in Wiener Neustadt online auf YouTube und folgen Sie uns auf Facebook, Instagram und TikTok.',
   prH1: 'Predigten', prLead: 'Sie können nicht vor Ort sein? Verfolgen Sie unsere Gottesdienste und Botschaften online.',
   prYtText: 'Sehen Sie unsere Gottesdienste und Botschaften.', prYtCta: 'Auf YouTube ansehen',
   prFbText: 'Neuigkeiten aus unserer Gemeinde.', prFbCta: 'Auf Facebook folgen',
   prMore: 'Sie finden uns auch auf',
 
-  visitTitle: 'Besuch & Kontakt – The Light of God Ministries',
+  visitTitle: 'Gemeinde besuchen in Wiener Neustadt | Light of God Ministries',
   visitDesc: 'The Light of God Ministries finden Sie in der Bräunlichgasse 24, 2700 Wiener Neustadt. Rufen Sie uns an oder schreiben Sie per WhatsApp: +43 676 9465931.',
   visitH1: 'Besuch & Kontakt', visitLead: 'Wir freuen uns darauf, Sie kennenzulernen.',
   addrLabel: 'Adresse', phoneLabel: 'Telefon & WhatsApp', timesLabel: 'Treffen',
@@ -92,7 +92,7 @@ module.exports = {
   giveLinkCta: 'Online spenden', giveThanks: 'Vielen Dank für Ihre Großzügigkeit.',
 
   navDepartments: 'Teams',
-  depTitle: 'Teams – The Light of God Ministries',
+  depTitle: 'Teams: Chor, Medien, Kinder | Light of God Ministries Wiener Neustadt',
   depDesc: 'Die Teams von The Light of God Ministries in Wiener Neustadt: Chor, Medien und Kinder. Fragen Sie, wie Sie mitmachen können.',
   depEyebrow: 'Mitmachen', depH1: 'Unsere Teams',
   depLead: 'Jeder ist eingeladen, mit seinen Gaben zu dienen. Finden Sie ein Team und fragen Sie, wie Sie dazukommen.',
