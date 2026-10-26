@@ -383,7 +383,7 @@ h2.h3:first-child{margin-top:0}
 .featured .meet dt{color:var(--gold-soft)}
 
 /* ---- phone/tablet landing hero (desktop unchanged) ---- */
-.hero-langs,.hero-emblem,.hero-give{display:none}
+.hero-emblem,.hero-give{display:none}
 .hero-give .ico{width:18px;height:18px;fill:currentColor;flex:none}
 @media (max-width:860px){
   .hero{min-height:0;padding:5.4rem 0 2.6rem;text-align:center;
@@ -391,9 +391,6 @@ h2.h3:first-child{margin-top:0}
   .hero-video,.hero-shade{display:none}
   .hero-grid{grid-template-columns:1fr}
   .hero-copy{display:flex;flex-direction:column;align-items:center}
-  .hero-langs{display:inline-flex;position:absolute;z-index:2;top:4.55rem;right:16px;margin:0;background:rgba(20,0,35,.25)}
-  .hero-langs a{padding:.4rem .5rem}
-  .hero-langs a svg{width:20px;height:14px}
   .hero-emblem{display:block;width:112px;height:112px;margin:.6rem auto 1rem;
     background:url(../assets/logo-256.png) center/contain no-repeat;
     filter:drop-shadow(0 10px 22px rgba(0,0,0,.45)) drop-shadow(0 0 16px rgba(230,170,80,.35));
@@ -413,3 +410,36 @@ h2.h3:first-child{margin-top:0}
 }
 @keyframes emblemFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 @media (prefers-reduced-motion:reduce){.hero-emblem{animation:none}}
+
+/* ---- language bar in the header (phones/tablets), smooth page switching ---- */
+.nav-langs{display:none}
+@media (max-width:1240px){
+  .nav-langs{display:inline-flex;margin:0 .5rem 0 auto;padding:.15rem;flex:none}
+  .nav-langs a{padding:.2rem .3rem}
+  .nav-langs a svg{width:17px;height:12px}
+  .menu .lang{display:none}
+  .nav{gap:.4rem}
+  .brand{min-width:0;flex:0 1 auto}
+  .burger{flex:none}
+}
+@media (max-width:640px){
+  .nav{padding-left:14px;padding-right:8px}
+  .brand{gap:.5rem;font-size:clamp(.86rem,4.3vw,1.1rem)}
+  .brand img{width:38px;height:38px}
+  .brand small{font-size:.5rem;letter-spacing:.14em}
+  .nav-langs{margin-right:.2rem}
+}
+@media (prefers-reduced-motion:no-preference){
+  @view-transition{navigation:auto}
+  .nav{view-transition-name:site-nav}
+  ::view-transition-old(root),::view-transition-new(root){animation-duration:.28s}
+}
+
+/* header fixes: centred flag bar, two-line brand on narrow phones */
+@media (max-width:1240px){.nav-langs{align-self:center;margin:0 .45rem 0 auto}}
+@media (max-width:440px){
+  .brand{font-size:clamp(.95rem,4.9vw,1.1rem);line-height:1.05}
+  .brand small{display:none}
+  .b-min{display:block;font-size:.8em;opacity:.92}
+}
+@media (max-width:360px){.hero .cta .btn{font-size:.82rem;padding:.75rem .5rem}}

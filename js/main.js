@@ -264,6 +264,32 @@
     customIn.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); gf.querySelector('.gf-panel[data-step="2"] [data-next]').click(); } });
   }
 
+  // Language switch: stay on the same page and scroll position; preload the other languages so it feels instant
+  var logicalPage = function () { return location.pathname.replace(/^\/(de|fr)(\/|$)/, '/'); };
+  try {
+    var savedPos = sessionStorage.getItem('lgm-lang-scroll');
+    if (savedPos) {
+      sessionStorage.removeItem('lgm-lang-scroll');
+      var sp = JSON.parse(savedPos);
+      if (sp.page === logicalPage() && sp.y > 0 && !location.hash) window.scrollTo({ top: sp.y, left: 0, behavior: 'instant' });
+    }
+  } catch (e) {}
+  var langLinks = document.querySelectorAll('.nav-langs a[hreflang], .menu .lang a[hreflang]');
+  langLinks.forEach(function (a) {
+    a.addEventListener('click', function () {
+      try { sessionStorage.setItem('lgm-lang-scroll', JSON.stringify({ page: logicalPage(), y: window.scrollY })); } catch (e) {}
+    });
+  });
+  var prefetchLangs = function () {
+    var seen = {};
+    langLinks.forEach(function (a) {
+      if (a.getAttribute('aria-current') || seen[a.href]) return;
+      seen[a.href] = 1;
+      var l = document.createElement('link'); l.rel = 'prefetch'; l.href = a.href; document.head.appendChild(l);
+    });
+  };
+  if ('requestIdleCallback' in window) requestIdleCallback(prefetchLangs, { timeout: 3000 }); else setTimeout(prefetchLangs, 1500);
+
   // Scroll reveal
   var items = document.querySelectorAll('.card, .about-grid > *, .visit-grid > *, .leader-grid > *, .watch .wrap > *, .social-link');
   items.forEach(function (i) { i.classList.add('reveal'); });

@@ -31,8 +31,9 @@
   <header class="nav" id="nav">
     <a class="brand" href="{{hHome}}" aria-label="{{brandAria}}">
       <img src="{{root}}assets/logo-96.png" alt="" width="44" height="44">
-      <span>Light of God Ministries Intl <small>Wiener Neustadt</small></span>
+      <span><span class="b-name">Light of God<span class="b-min"> Ministries Intl</span></span><small>Wiener Neustadt</small></span>
     </a>
+    <div class="lang nav-langs" role="group" aria-label="{{langAria}}">{{langSwitch}}</div>
     <button class="burger" id="burger" aria-label="{{menuAria}}" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
     <nav id="menu" class="menu" aria-label="{{menuAria}}">
       <a href="{{hHome}}"{{cur_home}}>{{navHome}}</a>
