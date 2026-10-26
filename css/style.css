@@ -443,3 +443,21 @@ h2.h3:first-child{margin-top:0}
   .b-min{display:block;font-size:.8em;opacity:.92}
 }
 @media (max-width:360px){.hero .cta .btn{font-size:.82rem;padding:.75rem .5rem}}
+
+/* ---- phone landing: no "Join us this Sunday", brown animated Give ---- */
+@media (max-width:860px){
+  .hero .cta .btn-gold{display:none}
+  .hero .cta{max-width:360px}
+  .hero-give{position:relative;overflow:hidden;isolation:isolate;
+    background:linear-gradient(135deg,#bd7a12 0%,#a85f00 55%,#8f5600 100%);
+    border:2px solid rgba(255,226,180,.55);color:#fff;font-weight:700;
+    box-shadow:0 8px 24px rgba(178,106,0,.45);animation:giveGlow 2.8s ease-out infinite}
+  .hero-give:hover{background:linear-gradient(135deg,#c8841a 0%,#b26a00 55%,#9a5c00 100%)}
+  .hero-give .ico{animation:giveBeat 2.8s ease-in-out infinite;transform-origin:center}
+  .hero-give::after{content:"";position:absolute;z-index:-1;top:-30%;bottom:-30%;left:-60%;width:40%;transform:skewX(-22deg);
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);animation:giveSheen 5.6s ease-in-out infinite}
+}
+@keyframes giveGlow{0%{box-shadow:0 8px 24px rgba(178,106,0,.45),0 0 0 0 rgba(230,160,60,.55)}70%,100%{box-shadow:0 8px 24px rgba(178,106,0,.45),0 0 0 14px rgba(230,160,60,0)}}
+@keyframes giveBeat{0%,50%,100%{transform:scale(1)}12%{transform:scale(1.28)}24%{transform:scale(1.05)}36%{transform:scale(1.2)}}
+@keyframes giveSheen{0%,55%{left:-60%}100%{left:130%}}
+@media (prefers-reduced-motion:reduce){.hero-give,.hero-give .ico,.hero-give::after{animation:none}}
