@@ -238,7 +238,7 @@ function build() {
             <p>${s.text}</p>${meet(s)}
             ${s.online
               ? `<a class="link" href="${LINKS.whatsappUrl}" target="_blank" rel="noopener">${t.askLink}</a>`
-              : `<a class="link" href="${vars.hVisit}">Bräunlichgasse 24 →</a>`}
+              : `<a class="link" href="${LINKS.mapsPlace}" target="_blank" rel="noopener">Bräunlichgasse 24 →</a>`}
           </article>`).join('') + '\n        </div>';
       vars.serviceCardsDetailed = '<div class="cards">' + svc.map(s => `
           <article class="card${s.featured ? ' featured' : ''}">
@@ -246,7 +246,7 @@ function build() {
             <h3>${s.name}</h3>
             <p class="time">${s.time}</p>
             <p>${s.text}</p>${meet(s)}
-            <p class="where-line">${s.online ? t.gathOnline : 'Bräunlichgasse 24, Wiener Neustadt'}</p>
+            <p class="where-line">${s.online ? t.gathOnline : `<a href="${LINKS.mapsPlace}" target="_blank" rel="noopener">Bräunlichgasse 24</a>`}</p>
             ${s.online ? `<a class="link" href="${LINKS.whatsappUrl}" target="_blank" rel="noopener">${t.askLink}</a>` : ''}
           </article>`).join('') + '\n        </div>';
 

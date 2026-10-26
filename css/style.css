@@ -490,3 +490,6 @@ h2.h3:first-child{margin-top:0}
   .page-give .gf-steps li{padding:.25rem .55rem .25rem .25rem;font-size:.72rem;gap:.35rem;white-space:nowrap}
   .page-give .gf-steps b{width:20px;height:20px;font-size:.7rem}
 }
+
+.where-line a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.where-line a:hover{text-decoration-thickness:2px}
