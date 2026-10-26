@@ -85,7 +85,7 @@
   var hv = document.getElementById('heroVideo');
   if (hero && hv) {
     var conn = navigator.connection || {};
-    var skip = (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) || conn.saveData;
+    var skip = (window.matchMedia && (matchMedia('(prefers-reduced-motion: reduce)').matches || matchMedia('(max-width: 860px)').matches)) || conn.saveData;
     if (!skip) {
       hero.classList.add('will-play');
       hv.src = (window.matchMedia && matchMedia('(max-width: 860px)').matches) ? hv.getAttribute('data-small') : hv.getAttribute('data-large');

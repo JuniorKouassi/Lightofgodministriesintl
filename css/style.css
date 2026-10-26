@@ -381,3 +381,35 @@ h2.h3:first-child{margin-top:0}
 .meet dd{margin:0;font-weight:700;letter-spacing:.04em;font-variant-numeric:tabular-nums}
 .featured .meet{background:rgba(255,255,255,.12)}
 .featured .meet dt{color:var(--gold-soft)}
+
+/* ---- phone/tablet landing hero (desktop unchanged) ---- */
+.hero-langs,.hero-emblem,.hero-give{display:none}
+.hero-give .ico{width:18px;height:18px;fill:currentColor;flex:none}
+@media (max-width:860px){
+  .hero{min-height:0;padding:5.4rem 0 2.6rem;text-align:center;
+    background:radial-gradient(360px 260px at 50% 18%,rgba(178,106,0,.30),transparent 70%),radial-gradient(500px 300px at 50% 100%,rgba(128,29,166,.35),transparent 70%),linear-gradient(170deg,#4a0b6c 0%,#3b0759 50%,#2e0145 100%)}
+  .hero-video,.hero-shade{display:none}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-copy{display:flex;flex-direction:column;align-items:center}
+  .hero-langs{display:inline-flex;position:absolute;z-index:2;top:4.55rem;right:16px;margin:0;background:rgba(20,0,35,.25)}
+  .hero-langs a{padding:.4rem .5rem}
+  .hero-langs a svg{width:20px;height:14px}
+  .hero-emblem{display:block;width:112px;height:112px;margin:.6rem auto 1rem;
+    background:url(../assets/logo-256.png) center/contain no-repeat;
+    filter:drop-shadow(0 10px 22px rgba(0,0,0,.45)) drop-shadow(0 0 16px rgba(230,170,80,.35));
+    animation:emblemFloat 6s ease-in-out infinite}
+  .hero h1{font-size:clamp(1.95rem,8.2vw,2.6rem);line-height:1.08}
+  .hero .lead{font-size:1.05rem;margin:.85rem 0 .35rem}
+  .hero .lead span{display:block;margin:.3rem 0 0;font-size:.7rem}
+  .hero-sub{font-size:.92rem;max-width:30ch;margin:0 auto 1.4rem}
+  .hero .cta{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;width:100%;max-width:380px}
+  .hero .cta .btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;padding:.8rem .9rem;font-size:.9rem;text-align:center;line-height:1.25}
+  .hero .cta .btn-gold{grid-column:1/-1}
+  .hero .cta .hero-give{order:2}
+  .hero .cta .btn-ghost{order:3}
+  .hero-give{background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.6);color:#fff}
+  .hero-give:hover{background:rgba(255,255,255,.2)}
+  .hero .next{margin-top:1.3rem;font-size:.82rem}
+}
+@keyframes emblemFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@media (prefers-reduced-motion:reduce){.hero-emblem{animation:none}}
