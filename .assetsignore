@@ -3,7 +3,7 @@ tools/
 build.js
 mockups/
 img/
-*.mp4
+/*.mp4
 .git
 .gitignore
 .assetsignore
