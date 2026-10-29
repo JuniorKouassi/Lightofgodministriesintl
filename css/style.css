@@ -566,3 +566,11 @@ h2.h3:first-child{margin-top:0}
   .visit-cta .cta .btn{flex:1 1 100%;text-align:center}
 }
 @media (prefers-reduced-motion:reduce){.live i{animation:none}.vcard,.vid-play{transition:none}}
+
+/* ---- home: weekly services swipe sideways on phones/tablets ---- */
+@media (max-width:860px){
+  #services .cards{display:flex;grid-template-columns:none;gap:.9rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin:0 -24px;padding:.4rem 24px 1.2rem;scroll-padding-inline:24px;scrollbar-width:none}
+  #services .cards::-webkit-scrollbar{display:none}
+  #services .card{flex:0 0 min(80%,380px);scroll-snap-align:start;opacity:1;transform:none}
+  #services .swipe-hint{display:flex;margin:-.6rem 0 .3rem}
+}
