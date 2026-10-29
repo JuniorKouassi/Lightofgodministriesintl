@@ -168,6 +168,89 @@
     }
   }
 
+  // Preachings: the YouTube player loads only after a click; earlier messages play in the same player; live banner
+  var vf = document.getElementById('vidFrame');
+  if (vf) {
+    var vlang = document.documentElement.lang || 'en';
+    var LOC = { en: 'en-GB', de: 'de-AT', fr: 'fr-FR' };
+    var stage = vf.querySelector('.vid-stage');
+    var vThumb = document.getElementById('vidThumb');
+    var vPlay = document.getElementById('vidPlay');
+    var vCap = document.getElementById('vidCap');
+    var vKicker = document.getElementById('vidKicker');
+    var shareBtn = document.getElementById('shareBtn');
+    var vGrid = document.getElementById('vGrid');
+    var svcTpl = vf.getAttribute('data-all') || '{date}';
+    var nowLive = vf.getAttribute('data-now-live') || 'LIVE';
+    var shareText = vf.getAttribute('data-share-text') || '';
+    var latestKicker = vKicker ? vKicker.textContent : '';
+    var curId = (vPlay.href.match(/[?&]v=([A-Za-z0-9_-]{11})/) || [])[1];
+    var fmtD = function (iso) { return new Date(iso + 'T00:00:00Z').toLocaleDateString(LOC[vlang] || 'en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }); };
+    var capFor = function (v) { return /\d{2}\/\d{2}\/\d{4}/.test(v.title || '') ? svcTpl.replace('{date}', fmtD(v.date)) : (v.title || ''); };
+    var stopEmbed = function () {
+      var f = stage.querySelector('iframe'); if (f) f.remove();
+      vf.classList.remove('playing');
+    };
+    var showVideo = function (v, kicker, caption) {
+      stopEmbed();
+      curId = v.id;
+      vThumb.src = '/thumb/' + v.id + '.jpg';
+      vPlay.href = 'https://www.youtube.com/watch?v=' + v.id;
+      vCap.textContent = caption || capFor(v);
+      if (vKicker) vKicker.textContent = kicker || '';
+      shareBtn.href = 'https://wa.me/?text=' + encodeURIComponent(shareText + ' https://youtu.be/' + v.id);
+    };
+    var embed = function (id) {
+      stopEmbed();
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&hl=' + vlang;
+      f.title = vf.getAttribute('data-embed-title') || 'YouTube';
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      f.setAttribute('allowfullscreen', '');
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      stage.appendChild(f);
+      vf.classList.add('playing');
+    };
+    vPlay.addEventListener('click', function (e) { e.preventDefault(); embed(curId); });
+    if (vGrid) {
+      vGrid.addEventListener('click', function (e) {
+        var a = e.target.closest('.vcard'); if (!a) return;
+        e.preventDefault();
+        var v = { id: a.getAttribute('data-id'), date: a.getAttribute('data-date'), title: a.getAttribute('data-title') };
+        showVideo(v, '');
+        embed(v.id);
+        var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+        vf.scrollIntoView({ block: 'center', behavior: reduce ? 'auto' : 'smooth' });
+      });
+    }
+    // Keep the page fresh without a redeploy: ask the worker for the current channel list and live status
+    if (window.fetch) {
+      fetch('/api/videos', { headers: { Accept: 'application/json' } }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+        if (!d || !d.videos || !d.videos.length) return;
+        var playing = vf.classList.contains('playing');
+        if (!playing && d.videos[0].id !== curId) {
+          showVideo(d.videos[0], latestKicker);
+          if (vGrid) {
+            var html = d.videos.slice(1, 7).map(function (v) {
+              var label = /\d{2}\/\d{2}\/\d{4}/.test(v.title || '') ? svcTpl.split(' · ')[0] : v.title;
+              return '<a class="vcard" href="https://www.youtube.com/watch?v=' + v.id + '" data-id="' + v.id + '" data-date="' + v.date + '" data-title="' + String(v.title || '').replace(/"/g, '&quot;') + '" target="_blank" rel="noopener">' +
+                '<div class="vthumb"><img src="/thumb/' + v.id + '.jpg?q=mq" alt="" width="320" height="180" loading="lazy"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></i></div>' +
+                '<div class="vmeta"><b>' + fmtD(v.date) + '</b><span></span></div></a>';
+            }).join('');
+            vGrid.innerHTML = html;
+            vGrid.querySelectorAll('.vmeta span').forEach(function (s, i) {
+              var v = d.videos[i + 1]; s.textContent = /\d{2}\/\d{2}\/\d{4}/.test(v.title || '') ? svcTpl.split(' · ')[0] : (v.title || '');
+            });
+          }
+        }
+        if (d.live && !playing) {
+          var row = document.getElementById('liveRow'); if (row) row.hidden = false;
+          showVideo({ id: d.live, date: '', title: '' }, '', nowLive);
+        }
+      }).catch(function () {});
+    }
+  }
+
   // Offerings flow: gift type -> amount -> pay
   var gf = document.getElementById('giveFlow');
   if (gf) {

@@ -74,6 +74,7 @@ module.exports = {
 <li>This website uses no cookies, no analytics and no tracking, and it has no forms.</li>
 <li>Fonts and images are hosted on this website. Our hosting provider processes technical data such as your IP address to deliver the pages and protect them from abuse.</li>
 <li>Google Maps is loaded only after you click “Load map”. Google then receives your IP address and technical data and may set cookies; see Google’s privacy policy.</li>
+<li>Videos on the Preachings page come from YouTube (Google) and load only after you press play, using YouTube’s privacy-enhanced address. Until then the preview pictures are served by this website, so your browser does not contact YouTube. After you press play, YouTube receives your IP address and technical data and may set cookies; see Google’s privacy policy.</li>
 <li>Links to Facebook, Instagram, YouTube, TikTok and WhatsApp lead to third-party services with their own privacy policies.</li>
 <li>If you call or message us on WhatsApp, we use your details only to answer you.</li>
 <li>Your rights under the GDPR: access, rectification, erasure, restriction, data portability and objection. Contact us by phone. You may also complain to the Austrian Data Protection Authority (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener">dsb.gv.at</a>).</li>
@@ -128,6 +129,14 @@ module.exports = {
   aboutVideoLabel: 'Video from a service at The Light of God Ministries',
 
   meetId: 'Meeting ID', meetCode: 'Access code',
+
+  prLatest: 'Latest message', prServiceDate: 'Sunday service · {date}', prPlay: 'Play the latest message',
+  prPrivacy: 'The video plays from YouTube. Pressing play connects your browser to YouTube (Google), which may set cookies.',
+  prShare: 'Share this message', prShareText: 'Watch this message from The Light of God Ministries in Wiener Neustadt:',
+  prEarlier: 'Earlier messages', prSwipe: 'Swipe for more', prAll: 'See all videos on YouTube',
+  prLive: 'LIVE NOW', prLiveNote: 'Our service is streaming – join us.', prNowLive: 'Live now',
+  prVisitEyebrow: 'Come and worship with us', prVisitH: 'Join us this Sunday', prPlan: 'Plan your visit',
+  prNoVideos: 'Watch our services and messages on YouTube.', ytPlayerTitle: 'YouTube video player',
 
   js: {
     days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],

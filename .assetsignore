@@ -7,3 +7,6 @@ img/
 .git
 .gitignore
 .assetsignore
+worker.js
+wrangler.jsonc
+.wrangler/

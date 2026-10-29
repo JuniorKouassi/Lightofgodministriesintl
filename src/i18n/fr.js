@@ -74,6 +74,7 @@ module.exports = {
 <li>Ce site n’utilise ni cookies, ni outils d’analyse, ni traçage, et ne contient aucun formulaire.</li>
 <li>Les polices et les images sont hébergées sur ce site. Notre hébergeur traite des données techniques, comme votre adresse IP, pour afficher les pages et les protéger contre les abus.</li>
 <li>Google Maps n’est chargé qu’après votre clic sur « Charger la carte ». Google reçoit alors votre adresse IP et des données techniques et peut déposer des cookies ; consultez la politique de confidentialité de Google.</li>
+<li>Les vidéos de la page « Prédications » proviennent de YouTube (Google) et ne se chargent qu’après votre clic sur lecture, via l’adresse de YouTube respectueuse de la vie privée. Jusque-là, les images d’aperçu sont fournies par ce site, votre navigateur ne contacte donc pas YouTube. Après le clic, YouTube reçoit votre adresse IP et des données techniques et peut déposer des cookies ; consultez la politique de confidentialité de Google.</li>
 <li>Les liens vers Facebook, Instagram, YouTube, TikTok et WhatsApp mènent à des services tiers qui ont leur propre politique de confidentialité.</li>
 <li>Si vous nous appelez ou nous écrivez sur WhatsApp, nous utilisons vos coordonnées uniquement pour vous répondre.</li>
 <li>Vos droits selon le RGPD : accès, rectification, effacement, limitation, portabilité et opposition. Contactez-nous par téléphone. Vous pouvez aussi déposer une plainte auprès de l’autorité autrichienne de protection des données (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener">dsb.gv.at</a>).</li>
@@ -128,6 +129,14 @@ module.exports = {
   aboutVideoLabel: 'Vidéo d’un culte à The Light of God Ministries',
 
   meetId: 'ID de réunion', meetCode: 'Code d’accès',
+
+  prLatest: 'Dernier message', prServiceDate: 'Culte du dimanche · {date}', prPlay: 'Lire le dernier message',
+  prPrivacy: 'La vidéo est lue depuis YouTube. En appuyant sur lecture, votre navigateur se connecte à YouTube (Google), qui peut déposer des cookies.',
+  prShare: 'Partager ce message', prShareText: 'Regardez ce message de The Light of God Ministries à Wiener Neustadt :',
+  prEarlier: 'Messages précédents', prSwipe: 'Faites glisser pour en voir plus', prAll: 'Voir toutes les vidéos sur YouTube',
+  prLive: 'EN DIRECT', prLiveNote: 'Notre culte est diffusé en direct – rejoignez-nous.', prNowLive: 'En direct',
+  prVisitEyebrow: 'Venez adorer avec nous', prVisitH: 'Rejoignez-nous dimanche', prPlan: 'Préparer votre visite',
+  prNoVideos: 'Regardez nos cultes et nos messages sur YouTube.', ytPlayerTitle: 'Lecteur vidéo YouTube',
 
   js: {
     days: ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'],

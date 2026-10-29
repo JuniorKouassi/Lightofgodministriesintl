@@ -74,6 +74,82 @@ const FLAGS = {
   fr: { name: 'Français', svg: '<svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><rect width="10" height="20" fill="#0055A4"/><rect x="20" width="10" height="20" fill="#EF4135"/></svg>' }
 };
 
+// ---- YouTube: newest videos of the church channel (baked into the page; the worker keeps them fresh afterwards) ----
+const YT_CHANNEL = 'UC7WvYHd-FKpB2IIH7Igz93A';
+const YT_PAGE = 'https://www.youtube.com/@TheLightofGodMinistriesWienerN';
+const VIDEOS_FILE = path.join(__dirname, 'src/data/videos.json');
+let VIDEOS = [];
+async function refreshVideos() {
+  try {
+    const r = await fetch('https://www.youtube.com/feeds/videos.xml?channel_id=' + YT_CHANNEL, { signal: AbortSignal.timeout(8000) });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const xml = await r.text();
+    const list = [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)].map(m => {
+      const e = m[1];
+      const id = (e.match(/<yt:videoId>([^<]+)</) || [])[1];
+      const title = (e.match(/<title>([^<]*)</) || [])[1] || '';
+      const pub = (e.match(/<published>([^<]+)</) || [])[1] || '';
+      const dm = title.match(/(\d{2})\/(\d{2})\/(\d{4})/);
+      return { id, title, date: dm ? dm[3] + '-' + dm[2] + '-' + dm[1] : pub.slice(0, 10) };
+    }).filter(v => v.id && /^[A-Za-z0-9_-]{11}$/.test(v.id));
+    if (!list.length) throw new Error('empty feed');
+    VIDEOS = list.slice(0, 12);
+    fs.mkdirSync(path.dirname(VIDEOS_FILE), { recursive: true });
+    fs.writeFileSync(VIDEOS_FILE, JSON.stringify(VIDEOS, null, 1), 'utf8');
+    console.log('YouTube: ' + VIDEOS.length + ' videos, newest ' + VIDEOS[0].date);
+  } catch (e) {
+    try { VIDEOS = JSON.parse(fs.readFileSync(VIDEOS_FILE, 'utf8')); console.log('YouTube feed unavailable (' + e.message + '), using saved list of ' + VIDEOS.length); }
+    catch (e2) { VIDEOS = []; console.log('YouTube: no video list available, the page shows a YouTube button instead'); }
+  }
+}
+const LOCALES = { en: 'en-GB', de: 'de-AT', fr: 'fr-FR' };
+const fmtDate = (iso, lang) => new Date(iso + 'T00:00:00Z').toLocaleDateString(LOCALES[lang], { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const isServiceTitle = v => /\d{2}\/\d{2}\/\d{4}/.test(v.title);
+const caption = (v, t, lang) => isServiceTitle(v) ? t.prServiceDate.replace('{date}', fmtDate(v.date, lang)) : v.title;
+const PLAY_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+const SHARE_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>';
+function videoSection(t, lang, root) {
+  const yt = '<svg class="yt-mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="4.5" width="21" height="15" rx="4.5" fill="#fff"/><path d="M10 9l5.5 3-5.5 3z" fill="#e00000"/></svg>';
+  const allBtn = '<p class="more-yt"><a class="btn btn-youtube" href="' + YT_PAGE + '" target="_blank" rel="noopener">' + yt + t.prAll + '</a></p>';
+  if (!VIDEOS.length) {
+    return '    <section class="section" style="padding-bottom:1rem"><div class="wrap vid-wrap center"><p class="watch-text dark">' + t.prNoVideos + '</p>' + allBtn + '</div></section>';
+  }
+  const v0 = VIDEOS[0];
+  const watch = id => 'https://www.youtube.com/watch?v=' + id;
+  const shareHref = id => 'https://wa.me/?text=' + encodeURIComponent(t.prShareText + ' https://youtu.be/' + id);
+  const cards = VIDEOS.slice(1, 7).map(v => `
+          <a class="vcard" href="${watch(v.id)}" data-id="${v.id}" data-date="${v.date}" data-title="${v.title.replace(/"/g, '&quot;')}" target="_blank" rel="noopener">
+            <div class="vthumb"><img src="${root}thumb/${v.id}.jpg?q=mq" alt="" width="320" height="180" loading="lazy"><i>${PLAY_SVG}</i></div>
+            <div class="vmeta"><b>${fmtDate(v.date, lang)}</b><span>${isServiceTitle(v) ? t.prServiceDate.split(' · ')[0] : v.title}</span></div>
+          </a>`).join('');
+  return `    <section class="section" id="latest" style="padding-bottom:1rem">
+      <div class="wrap vid-wrap">
+        <div class="live-row" id="liveRow" hidden><span class="live"><i></i>${t.prLive}</span><span class="live-note">${t.prLiveNote}</span></div>
+        <div class="vid-frame" id="vidFrame" data-embed-title="${t.ytPlayerTitle}" data-now-live="${t.prNowLive}" data-share-text="${t.prShareText}" data-all="${t.prServiceDate}">
+          <div class="vid-stage">
+            <img id="vidThumb" src="${root}thumb/${v0.id}.jpg" alt="" width="1280" height="720">
+            <a class="vid-play" id="vidPlay" href="${watch(v0.id)}" target="_blank" rel="noopener" aria-label="${t.prPlay}">${PLAY_SVG}</a>
+          </div>
+          <div class="vid-cap"><small id="vidKicker">${t.prLatest}</small><strong id="vidCap">${caption(v0, t, lang)}</strong></div>
+        </div>
+        <div class="vid-bar">
+          <p class="vid-privacy">${t.prPrivacy}</p>
+          <a class="btn btn-whatsapp" id="shareBtn" href="${shareHref(v0.id)}" target="_blank" rel="noopener">${SHARE_SVG} ${t.prShare}</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <h2 class="sec-title">${t.prEarlier}</h2>
+        <p class="swipe-hint">${t.prSwipe} <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></p>
+        <div class="vgrid" id="vGrid">${cards}
+        </div>
+        ${allBtn}
+      </div>
+    </section>`;
+}
+
 const read = f => fs.readFileSync(path.join(__dirname, f), 'utf8');
 const layout = read('src/layout.html');
 const pageSrc = Object.fromEntries(PAGES.map(p => [p.id, read(`src/pages/${p.id}.html`)]));
@@ -116,6 +192,7 @@ function build() {
       vars.socialPills = SOCIALS.concat([['Google', LINKS.mapsPlace, 'map-link']])
         .map(([n, u, c]) => `<a class="social-link ${c}" href="${u}" target="_blank" rel="noopener">${ICONS[n]} ${n === 'Google' ? 'Google Maps' : n}</a>`).join('\n          ');
       vars.iconInstagram = ICONS.Instagram;
+      vars.pSection = page.id === 'preachings' ? videoSection(t, lang, root) : '';
       const joinUrl = name => `${LINKS.whatsappUrl}?text=${encodeURIComponent(t.depWaMsg.replace('{name}', name))}`;
       vars.deptCards = '<div class="cards">' + t.departments.map(d => {
         const slug = DEPT_SLUG[d.icon], m = DEPT_MEDIA[slug];
@@ -272,6 +349,8 @@ function build() {
   fs.writeFileSync(path.join(__dirname, 'sitemap.xml'), sitemap, 'utf8');
   fs.writeFileSync(path.join(__dirname, 'robots.txt'), `User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /thumb/
 
 Sitemap: ${SITE_URL}/sitemap.xml
 `, 'utf8');
@@ -299,4 +378,4 @@ Sitemap: ${SITE_URL}/sitemap.xml
   fs.writeFileSync(path.join(__dirname, '404.html'), notFound, 'utf8');
   console.log(`Built ${count} pages`);
 }
-build();
+(async () => { await refreshVideos(); build(); })();

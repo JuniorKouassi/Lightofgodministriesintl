@@ -493,3 +493,76 @@ h2.h3:first-child{margin-top:0}
 
 .where-line a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
 .where-line a:hover{text-decoration-thickness:2px}
+
+/* ---- Preachings: latest message player, earlier messages, live banner, visit card ---- */
+.vid-wrap{max-width:980px}
+.live-row{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;margin-bottom:1rem}
+.live-row[hidden]{display:none}
+.live{display:inline-flex;gap:.55rem;align-items:center;background:#e00000;color:#fff;padding:.4rem .95rem;border-radius:999px;font-weight:700;font-size:.8rem;letter-spacing:.09em;box-shadow:0 6px 18px rgba(224,0,0,.35)}
+.live i{width:9px;height:9px;border-radius:50%;background:#fff;animation:livepulse 1.4s ease-in-out infinite}
+@keyframes livepulse{50%{opacity:.25}}
+.live-note{color:var(--muted);font-size:.92rem}
+.vid-frame{position:relative}
+.vid-stage{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,#4a0b6c,#1a0030);box-shadow:0 0 0 1px rgba(178,106,0,.55),0 0 0 8px rgba(178,106,0,.14),0 28px 60px rgba(35,0,60,.35)}
+.vid-stage img{display:block;width:100%;height:100%;object-fit:cover}
+.vid-stage::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,0,35,.05) 40%,rgba(20,0,35,.82));pointer-events:none}
+.vid-play{position:absolute;z-index:2;left:50%;top:46%;transform:translate(-50%,-50%);width:88px;height:62px;border:0;border-radius:18px;background:#e00000;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.45);transition:transform .2s}
+.vid-play:hover,.vid-play:focus-visible{transform:translate(-50%,-50%) scale(1.07)}
+.vid-play:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.vid-play svg{width:30px;height:30px;fill:#fff;margin-left:3px}
+.vid-cap{position:absolute;z-index:2;left:1.4rem;right:1.4rem;bottom:1.1rem;color:#fff;pointer-events:none}
+.vid-cap small{display:block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:.15rem}
+.vid-cap small:empty{display:none}
+.vid-cap strong{font-family:var(--font-display);font-size:clamp(1.15rem,2.6vw,1.8rem);font-weight:700}
+.vid-stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:4;background:#000}
+.vid-frame.playing .vid-stage::after,.vid-frame.playing .vid-play,.vid-frame.playing .vid-cap{display:none}
+.vid-bar{display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;align-items:center;justify-content:space-between;margin-top:1.1rem}
+.vid-privacy{margin:0;color:var(--muted);font-size:.8rem;max-width:520px}
+.vid-bar .btn-whatsapp{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.3rem;font-size:.88rem}
+.vid-bar .btn-whatsapp svg{width:18px;height:18px}
+.sec-title{margin:3.2rem 0 1.2rem}
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.vcard{display:block;text-decoration:none;color:inherit;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 10px 30px rgba(74,11,108,.1);transition:transform .25s,box-shadow .25s}
+.vcard:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(74,11,108,.18)}
+.vcard:focus-visible{outline:3px solid var(--gold-text);outline-offset:3px}
+.vthumb{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#4a0b6c,#1a0030)}
+.vthumb img{display:block;width:100%;height:100%;object-fit:cover}
+.vthumb i{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:54px;height:38px;border-radius:12px;background:rgba(224,0,0,.92);display:grid;place-items:center}
+.vthumb i svg{width:18px;height:18px;fill:#fff;margin-left:2px}
+.vmeta{padding:.9rem 1.1rem 1.1rem}
+.vmeta b{display:block;font-family:var(--font-display);font-size:1.25rem;line-height:1.2}
+.vmeta span{color:var(--muted);font-size:.82rem}
+.more-yt{margin-top:1.8rem;text-align:center}
+.swipe-hint{display:none;align-items:center;gap:.5rem;margin:-.2rem 0 .2rem;color:var(--muted);font-size:.78rem;letter-spacing:.06em}
+.swipe-hint svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.visit-cta{display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:center;margin-top:1.4rem;padding:2rem 2.2rem;border-radius:var(--radius);color:#fff;background:radial-gradient(500px 240px at 90% 0%,rgba(178,106,0,.3),transparent 70%),linear-gradient(135deg,#4a0b6c,#2e0145);box-shadow:0 20px 50px rgba(46,1,69,.35)}
+.visit-cta .eyebrow{margin:0 0 .5rem}
+.visit-cta h2{font-size:clamp(1.6rem,3vw,2.2rem);margin:0 0 .5rem}
+.visit-cta p{margin:0;opacity:.9}
+.visit-cta ul{list-style:none;margin:1rem 0 0;padding:0;display:grid;gap:.4rem;font-size:.95rem}
+.visit-cta li span{display:inline-block;min-width:5.6rem;font-weight:700;color:var(--gold-soft)}
+.visit-cta a{color:inherit}
+.visit-cta .cta{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:flex-end}
+@media (max-width:860px){
+  .vid-play{width:70px;height:50px}
+  .vid-cap{left:1rem;right:1rem;bottom:.8rem}
+  .visit-cta{grid-template-columns:1fr;padding:1.5rem 1.3rem}
+  .visit-cta .cta{justify-content:flex-start}
+  .sec-title{margin-top:2.4rem}
+  .vgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .vid-stage::after{display:none}
+  .vid-cap{position:static;color:var(--ink);padding:.9rem .2rem 0}
+  .vid-cap small{color:var(--bronze-text)}
+  .vid-cap strong{font-size:1.2rem}
+  .vid-stage{box-shadow:0 0 0 1px rgba(178,106,0,.55),0 0 0 6px rgba(178,106,0,.14),0 18px 40px rgba(35,0,60,.3)}
+  .vid-bar{flex-direction:column;align-items:stretch}
+  .vid-bar .btn-whatsapp{justify-content:center}
+  .vgrid{display:flex;grid-template-columns:none;gap:.9rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin:0 -24px;padding:.4rem 24px 1.1rem;scroll-padding-inline:24px;scrollbar-width:none}
+  .vgrid::-webkit-scrollbar{display:none}
+  .vcard{flex:0 0 76%;scroll-snap-align:start}
+  .swipe-hint{display:flex}
+  .visit-cta .cta .btn{flex:1 1 100%;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){.live i{animation:none}.vcard,.vid-play{transition:none}}

@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /thumb/
 
 Sitemap: https://lightofgodministriesintl.kouassij019.workers.dev/sitemap.xml

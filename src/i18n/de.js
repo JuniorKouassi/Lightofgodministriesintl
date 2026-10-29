@@ -74,6 +74,7 @@ module.exports = {
 <li>Diese Website verwendet keine Cookies, keine Analyse- und keine Tracking-Dienste und enthält keine Formulare.</li>
 <li>Schriften und Bilder werden auf dieser Website selbst gehostet. Unser Hosting-Anbieter verarbeitet technische Daten wie Ihre IP-Adresse, um die Seiten auszuliefern und vor Missbrauch zu schützen.</li>
 <li>Google Maps wird erst nach Ihrem Klick auf „Karte laden“ geladen. Google erhält dann Ihre IP-Adresse und technische Daten und kann Cookies setzen; siehe die Datenschutzerklärung von Google.</li>
+<li>Videos auf der Seite „Predigten“ stammen von YouTube (Google) und werden erst nach Ihrem Klick auf „Abspielen“ geladen, über die datenschutzfreundliche Adresse von YouTube. Bis dahin liefert diese Website die Vorschaubilder selbst aus, sodass Ihr Browser keinen Kontakt zu YouTube aufnimmt. Nach dem Abspielen erhält YouTube Ihre IP-Adresse und technische Daten und kann Cookies setzen; siehe die Datenschutzerklärung von Google.</li>
 <li>Links zu Facebook, Instagram, YouTube, TikTok und WhatsApp führen zu Diensten Dritter mit eigenen Datenschutzbestimmungen.</li>
 <li>Wenn Sie uns anrufen oder per WhatsApp schreiben, verwenden wir Ihre Angaben ausschließlich, um Ihnen zu antworten.</li>
 <li>Ihre Rechte nach der DSGVO: Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch. Kontaktieren Sie uns telefonisch. Sie können sich außerdem bei der Österreichischen Datenschutzbehörde beschweren (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener">dsb.gv.at</a>).</li>
@@ -128,6 +129,14 @@ module.exports = {
   aboutVideoLabel: 'Video aus einem Gottesdienst bei The Light of God Ministries',
 
   meetId: 'Meeting-ID', meetCode: 'Kenncode',
+
+  prLatest: 'Neueste Predigt', prServiceDate: 'Gottesdienst · {date}', prPlay: 'Die neueste Predigt abspielen',
+  prPrivacy: 'Das Video wird von YouTube abgespielt. Beim Abspielen verbindet sich Ihr Browser mit YouTube (Google), das Cookies setzen kann.',
+  prShare: 'Diese Predigt teilen', prShareText: 'Sehen Sie diese Predigt von The Light of God Ministries in Wiener Neustadt:',
+  prEarlier: 'Frühere Predigten', prSwipe: 'Wischen für mehr', prAll: 'Alle Videos auf YouTube ansehen',
+  prLive: 'JETZT LIVE', prLiveNote: 'Unser Gottesdienst wird übertragen – seien Sie dabei.', prNowLive: 'Jetzt live',
+  prVisitEyebrow: 'Feiern Sie mit uns', prVisitH: 'Besuchen Sie uns am Sonntag', prPlan: 'Besuch planen',
+  prNoVideos: 'Sehen Sie unsere Gottesdienste und Predigten auf YouTube.', ytPlayerTitle: 'YouTube-Videoplayer',
 
   js: {
     days: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],

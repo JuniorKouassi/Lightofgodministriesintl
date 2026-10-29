@@ -6,26 +6,24 @@
       </div>
     </section>
 
-    <section class="section">
+{{pSection}}
+
+    <section class="section" style="padding-top:0">
       <div class="wrap">
-        <div class="cards two">
-          <article class="card featured">
-            <span class="day">YouTube</span>
-            <h3>The Light of God Ministries</h3>
-            <p>{{prYtText}}</p>
-            <a class="btn btn-youtube" href="{{youtube}}" target="_blank" rel="noopener">{{iconYoutubeButton}}{{prYtCta}}</a>
-          </article>
-          <article class="card">
-            <span class="day">Facebook</span>
-            <h3>The Light of God Ministries Wiener Neustadt</h3>
-            <p>{{prFbText}}</p>
-            <a class="btn btn-indigo" href="{{facebook}}" target="_blank" rel="noopener">{{prFbCta}}</a>
-          </article>
-        </div>
-        <p class="more-on">{{prMore}}</p>
-        <div class="social">
-          <a class="social-link ig" href="{{instagram}}" target="_blank" rel="noopener">{{iconInstagram}} Instagram</a>
-          <a class="social-link tt" href="{{tiktok}}" target="_blank" rel="noopener">{{iconTiktok}} TikTok</a>
+        <div class="visit-cta">
+          <div>
+            <p class="eyebrow">{{prVisitEyebrow}}</p>
+            <h2>{{prVisitH}}</h2>
+            <p>{{heroSub}}</p>
+            <ul>
+              <li><span>{{daySun}}</span> {{svcService}} · 10:00 – 12:30</li>
+              <li><span>{{addrLabel}}</span> <a href="{{mapsPlace}}" target="_blank" rel="noopener">Bräunlichgasse 24, Wiener Neustadt</a></li>
+            </ul>
+          </div>
+          <div class="cta">
+            <a class="btn btn-gold" href="{{mapsPlace}}" target="_blank" rel="noopener">{{getDirections}}</a>
+            <a class="btn btn-ghost" href="{{hVisit}}">{{prPlan}}</a>
+          </div>
         </div>
       </div>
     </section>
